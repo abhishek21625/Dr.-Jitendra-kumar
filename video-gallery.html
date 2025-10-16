@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Event By Accord | Dr. Jitendra Kumar</title>
+    <title>Video Gallery | Dr. Jitendra Kumar</title>
 
     <!-- Google Fonts  -->
     <link
@@ -99,25 +99,6 @@
             transition: opacity .5s ease, transform .5s ease;
         }
 
-        /* Floating WhatsApp-like action (example) */
-        .fab {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: var(--accent);
-            color: #fff;
-            display: grid;
-            place-items: center;
-            box-shadow: 0 10px 22px rgba(20, 184, 166, .35);
-        }
-
-        .fab:hover {
-            filter: brightness(.95);
-        }
-
         /* Modal tweaks */
         .modal-dark .modal-content {
             background: #0b1023;
@@ -168,7 +149,8 @@
                         <ul class="dropdown-menu fade-down shadow" aria-labelledby="servicesDropdown">
                             <li><a class="dropdown-item" href="kidneydiseases.html">Kidney Diseases</a></li>
                             <li><a class="dropdown-item" href="acutekidneyinjury.html">Acute Kidney Injury</a></li>
-                            <li><a class="dropdown-item" href="chronic-kidney-diseases.html">Chronic Kidney Diseases</a></li>
+                            <li><a class="dropdown-item" href="chronic-kidney-diseases.html">Chronic Kidney Diseases</a>
+                            </li>
                             <li><a class="dropdown-item" href="dialysis.html">Dialysis</a></li>
                             <li><a class="dropdown-item" href="nephritic_syndrome.html">Nephritic Syndrome</a></li>
                             <li><a class="dropdown-item" href="nephrotic_syndrome.html">Nephritoc Syndrome</a></li>
@@ -189,9 +171,9 @@
                             <li><a class="dropdown-item" href="book_launch.html">Book Lanuch</a></li>
                             <li><a class="dropdown-item" href="cme.html">CME</a></li>
                             <li><a class="dropdown-item" href="event_by_accord.html">Event by Accord</a></li>
-                            <li><a class="dropdown-item" href="#isot">ISOT</a></li>
-                            <li><a class="dropdown-item" href="#independence">Independence</a></li>
-                            <li><a class="dropdown-item" href="#homeopathy">Homeopathy</a></li>
+                            <li><a class="dropdown-item" href="isot.html">ISOT</a></li>
+                            <li><a class="dropdown-item" href="independence.html">Independence</a></li>
+                            <li><a class="dropdown-item" href="homepathy.html">Homeopathy</a></li>
                         </ul>
                     </li>
 
@@ -202,8 +184,8 @@
                             Gallery
                         </a>
                         <ul class="dropdown-menu fade-down shadow" aria-labelledby="galleryDropdown">
-                            <li><a class="dropdown-item" href="#photos">Photo Gallery</a></li>
-                            <li><a class="dropdown-item" href="#videos">Video Gallery</a></li>
+                            <li><a class="dropdown-item" href="photo-gallery.html">Photo Gallery</a></li>
+                            <li><a class="dropdown-item" href="video-gallery.html">Video Gallery</a></li>
                         </ul>
                     </li>
 
@@ -224,14 +206,14 @@
         <div class="container">
             <div class="row justify-content-center align-items-center g-4">
                 <div class="col-lg-12 text-center">
-                    <span class="badge-accent reveal">Events</span>
-                    <h1 class="title ff-heading mt-3 reveal delay-1">Events By Accord</h1>
+                    <span class="badge-accent reveal">Gallery</span>
+                    <h1 class="title ff-heading mt-3 reveal delay-1">Video Gallery</h1>
                     <p class="lead text-white-50 mb-0 reveal delay-2">Learn more about the journey, education, and
                         expertise.</p>
                     <nav class="crumb mt-3 reveal delay-3" aria-label="breadcrumb">
                         <a href="index.html">Home</a>
                         <span class="sep">/</span>
-                        <span aria-current="page">Events By Accord</span>
+                        <span aria-current="page">Video Gallery</span>
                     </nav>
                 </div>
             </div>
@@ -240,49 +222,228 @@
 
     <section>
         <div class="container">
-
-            <div class="gallery" id="gallery">
+            <!-- <div class="gallery" id="gallery">
                 <figure class="gallery-item fade-in" data-category="event" data-caption="">
-                    <img src="images/eba/imgi_2_accord1.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="speaker" data-caption="">
-                    <img src="images/eba/imgi_3_accord2.webp" alt="" loading="lazy" />
+                    <img src="images/imgi_38_dr.jitendra-gallery7.webp" alt="" loading="lazy" />
                     <figcaption class="overlay"></figcaption>
                 </figure>
 
                 <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/eba/imgi_4_accord3.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="group" data-caption="">
-                    <img src="images/eba/imgi_5_accord4.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/eba/imgi_6_accord5.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="event" data-caption="">
-                    <img src="images/eba/imgi_7_accord6.webp" loading="lazy" />
+                    <img src="images/gallery/imgi_10_news-3.webp" alt="" loading="lazy" />
                     <figcaption class="overlay"></figcaption>
                 </figure>
 
                 <figure class="gallery-item fade-in" data-category="speaker" data-caption="">
-                    <img src="images/eba/imgi_8_accord7.jpg" alt="" loading="lazy" />
+                    <img src="images/imgi_39_dr.jitendra-gallery8.webp" alt="" loading="lazy" />
                     <figcaption class="overlay"></figcaption>
                 </figure>
 
-                <figure class="gallery-item fade-in" data-category="group" data-caption="">
-                    <img src="images/eba/imgi_9_accord8.webp" alt=""
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_11_news-4.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_12_news-5.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_13_news-6.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_14_dr.jitendra-dainik-jagran.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_15_dr.jitendra-jagran.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/imgi_48_dr.jitendra-gallery5.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_16_dr.jitendra-jagran2.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_17_dr.jitendra-newspaper-article.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_18_dr.jitendra-newspaper-article2.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_19_dr.jitendra-newspaper-article3.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                 <figure class="gallery-item fade-in" data-category="group" data-caption="">
+                    <img src="images/imgi_46_dr.jitendra-gallery3.webp" alt=""
                         loading="lazy" />
                     <figcaption class="overlay"></figcaption>
                 </figure>
-            </div>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_20_dr.jitendra-newspaper-article4.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+                
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_21_dr.jitendra-newspaper-article5.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_22_dr.jitendra-newspaper-article6.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_23_dr.jitendra-newspaper-article7.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/imgi_42_dr.jitendra-gallery11.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_24_dr.jitendra-newspaper-article8.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_25_dr.jitendra-newspaper-article9.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="event" data-caption="">
+                    <img src="images/imgi_44_dr.jitendra-gallery1.webp" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_26_dr.jitendra-newspaper-article10.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/imgi_47_dr.jitendra-gallery4.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_27_dr.jitendra-newspaper-article11.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_28_dr.jitendra-newspaper-article12.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_29_dr.jitendra-newspaper-article13.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_30_dr.jitendra-newspaper-article14.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_31_dr.jitendra-newspaper-article15.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_32_dr.jitendra-newspaper-article16.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                 <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/imgi_49_dr.jitendra-gallery6.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_33_dr.jitendra-newspaper-article17.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_34_dr.jitendra-newspaper-article18.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_35_dr.jitendra-newspaper-article19.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_36_dr.jitendra-newspaper-article21.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_37_dr.jitendra-punjab-kesari.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_5_shivir.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                 <figure class="gallery-item fade-in" data-category="moment" data-caption="Signing copies">
+                    <img src="images/imgi_40_dr.jitendra-gallery9.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_6_shivir1.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_7_dr.jitendra-newspaper-article22.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_8_news-1.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="group" data-caption="">
+                    <img src="images/imgi_41_dr.jitendra-gallery10.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/gallery/imgi_9_news-2.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+
+                <figure class="gallery-item fade-in" data-category="speaker" data-caption="">
+                    <img src="images/imgi_45_dr.jitendra-gallery2.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
+            </div> -->
 
         </div>
     </section>
@@ -317,7 +478,7 @@
         </div>
     </div>
 
-   <footer class="pt-5">
+    <footer class="pt-5">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4">
@@ -389,7 +550,7 @@
             </div>
         </div>
     </footer>
-    
+
     <!-- Bootstrap JS + Page JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

@@ -808,6 +808,10 @@ section {
   margin-left: 0.5rem;
 } */
 
+section {
+  /* overflow: hidden; */
+}
+
 /* Reveal animation */
 .rev {
   opacity: 0;

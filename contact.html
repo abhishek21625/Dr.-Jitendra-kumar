@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us | Dr. Jitendra Kumar</title>
+
+    <!-- Google Fonts: Headings + Body (max 2 families)  -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icons  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css" />
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6f2dbd;
+            /* brand purple */
+            --accent: #20b45b;
+            /* brand green */
+            --bg-dark: #0d1321;
+            /* deep navy for dark bands */
+            --surface: #ffffff;
+            /* white */
+            --muted: #f3f5f8;
+            /* light gray surface */
+        }
+
+        /* Main Content */
+        .contact-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Contact Info Cards */
+        .contact-info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .contact-info-card.phone {
+            border-left-color: var(--primary);
+        }
+
+        .contact-info-card.email {
+            border-left-color: var(--primary);
+        }
+
+        .contact-info-card.location {
+            border-left-color: var(--primary);
+        }
+
+        .contact-info-card i {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            background: var(--accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-info-card h4 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .contact-info-card p {
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            color: #f39c12;
+        }
+
+        /* Form Section */
+        .form-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--text);
+            position: relative;
+            display: inline-block;
+        }
+
+        .form-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .form-control {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.2rem rgba(139, 58, 139, 0.15);
+            background: white;
+        }
+
+        .form-control::placeholder {
+            color: #999;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 576px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .btn-submit {
+            background: var(--primary);
+            border: none;
+            color: white;
+            font-weight: 700;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-top: 1rem;
+            /* box-shadow: 0 5px 15px rgba(139, 58, 139, 0.3); */
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 58, 139, 0.4);
+            color: white;
+            background: var(--bg-dark);
+        }
+
+        .btn-submit:active {
+            transform: translateY(-1px);
+        }
+
+        /* Map Section */
+        .map-container {
+            margin-top: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            height: 400px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Animations */
+        /* @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        } */
+
+        /* Scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Form validation */
+        .form-control.is-invalid {
+            border-color: #dc3545;
+        }
+
+        .form-control.is-valid {
+            border-color: #28a745;
+        }
+
+        .invalid-feedback {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            display: none;
+            animation: fadeInDown 0.5s ease;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg py-3 fixed-top bg-light">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#top" aria-label="Kidney Care Home">
+                <img src="images/Logo.png" alt="Dr Jitendra Kumar Logo" class="img-fluid" style="max-height: 60px;">
+            </a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div id="nav" class="collapse navbar-collapse justify-content-center">
+                <ul class="navbar-nav gap-lg-1 align-items-lg-center">
+
+                    <li class="nav-item"><a class="nav-link fw-medium" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="about.html">About</a></li>
+
+                    <!-- Services Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-medium" href="#" id="servicesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu fade-down shadow" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="kidneydiseases.html">Kidney Diseases</a></li>
+                            <li><a class="dropdown-item" href="acutekidneyinjury.html">Acute Kidney Injury</a></li>
+                            <li><a class="dropdown-item" href="chronic-kidney-diseases.html">Chronic Kidney Disease</a>
+                            </li>
+                            <li><a class="dropdown-item" href="dialysis.html">Dialysis</a></li>
+                            <li><a class="dropdown-item" href="nephritic_syndrome.html">Nephritic Syndrome</a></li>
+                            <li><a class="dropdown-item" href="nephrotic_syndrome.html">Nephritoc Syndrome</a></li>
+                            <li><a class="dropdown-item" href="renal_biopsy.html">Renal (Kidney) Biopsy</a></li>
+                            <li><a class="dropdown-item" href="kidney_transplant.html">Renal (Kidney) Transplant</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Events Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-medium" href="#" id="eventsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Events
+                        </a>
+                        <ul class="dropdown-menu fade-down shadow" aria-labelledby="eventsDropdown">
+                            <li><a class="dropdown-item" href="#article">Article</a></li>
+                            <li><a class="dropdown-item" href="book_launch.html">Book Lanuch</a></li>
+                            <li><a class="dropdown-item" href="cme.html">CME</a></li>
+                            <li><a class="dropdown-item" href="event_by_accord.html">Event by Accord</a></li>
+                            <li><a class="dropdown-item" href="isot.html">ISOT</a></li>
+                            <li><a class="dropdown-item" href="independence.html">Independence</a></li>
+                            <li><a class="dropdown-item" href="homepathy.html">Homeopathy</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Gallery Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-medium" href="#" id="galleryDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Gallery
+                        </a>
+                        <ul class="dropdown-menu fade-down shadow" aria-labelledby="galleryDropdown">
+                            <li><a class="dropdown-item" href="photo-gallery.html">Photo Gallery</a></li>
+                            <li><a class="dropdown-item" href="video-gallery.html">Video Gallery</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link fw-medium" href="news.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="blogs.html">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="contact.html">Contact</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Book Appointment Button -->
+            <a class="btn btn-cta text-white px-4 py-2" href="contact.html">Book Appointment</a>
+
+        </div>
+    </nav>
+
+    <!-- Hero  -->
+    <header class="about-hero pb-5" style="padding-top: 150px;">
+        <div class="container">
+            <div class="row justify-content-center align-items-center g-4">
+                <div class="col-lg-12 text-center">
+                    <span class="badge-accent reveal">Know Your Doctor</span>
+                    <h1 class="title ff-heading mt-3 reveal delay-1">Contact Us</h1>
+                    <p class="lead text-white-50 mb-0 reveal delay-2">Learn more about the journey, education, and
+                        expertise.</p>
+                    <nav class="crumb mt-3 reveal delay-3" aria-label="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span class="sep">/</span>
+                        <span aria-current="page">Contact Us</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-grid">
+                <!-- Left Column - Contact Info -->
+                <div>
+                    <div class="contact-info-card phone scroll-animate">
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <p>+91 8178019467</p>
+                        <p style="font-size: 0.9rem; color: #999; margin-top: 0.5rem;">Available 24/7</p>
+                    </div>
+
+                    <div class="contact-info-card email scroll-animate">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>info@drjitendrakumar.com</p>
+                        <p style="font-size: 0.9rem; color: #999; margin-top: 0.5rem;">We'll respond within 24
+                            hours</p>
+                    </div>
+
+                    <div class="contact-info-card location scroll-animate">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Address</h4>
+                        <p>Accord Superspeciality Hospital, Sector-86, Faridabad-121002</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (348 reviews)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Contact Form -->
+                <div class="form-section">
+                    <h2>Contact Form</h2>
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
+                    </div>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="John" required>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Doe" required>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="john@example.com"
+                                    required>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="+91 XXXXXXXXXX" required>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="How can we help?"
+                                required>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" placeholder="Tell us more about your inquiry..."
+                                required></textarea>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-container scroll-animate">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1704.8613202893932!2d77.34918599714966!3d28.400069303990197!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cddde562c103d%3A0xad40b94c195d2148!2sDr%20Jitendra%20Kumar!5e0!3m2!1sen!2sin!4v1760616398122!5m2!1sen!2sin" width="" height="" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="pt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html"
+                            aria-label="Kidney Care Home">
+                            <img src="images/Logo.png" alt="Dr Jitendra Kumar Logo"
+                                class="img-fluid border rounded bg-white p-1" style="max-height: 60px;">
+                        </a>
+                    </div>
+                    <p class="mb-2">Dr. Jitendra Kumar</p>
+                    <ul class="list-unstyled small">
+                        <li><i class="bi bi-telephone me-2"></i> +91 81780 19467</li>
+                        <li><i class="bi bi-envelope me-2"></i> info@example.com</li>
+                        <li><i class="bi bi-geo-alt me-2"></i> Accord Superspeciality Hospital, Sector-86,
+                            Faridabad-121002</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="text-white">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-white">Our Services</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="kidneydiseases.html">Kidney Diseases</a></li>
+                        <li><a href="acute_kidney_injury.html">Acute Kidney Injury</a></li>
+                        <li><a href="chronic-kidney-diseases.html">Chronic Kidney Diseases</a></li>
+                        <li><a href="dialysis.html">Dialysis</a></li>
+                        <li><a href="nephritic_syndrome.html">Nephritic Syndrome</a></li>
+                        <li><a href="nephrotic_syndrome.html">Nephrotic Syndrome</a></li>
+                        <li><a href="renal_biopsy.html">Renal Biopsy</a></li>
+                        <li><a href="kidney_transplant.html">Renal Transplant</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-white">Meeting Hours</h6>
+                    <ul class="list-unstyled small">
+                        <li>Mon–Fri: 09:00–20:00</li>
+                        <li>Sat-Sun: Closed</li>
+                    </ul>
+                    <div class="d-flex gap-2">
+                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="WhatsApp"><i
+                                class="bi bi-whatsapp"></i></a>
+                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="Facebook"><i
+                                class="bi bi-facebook"></i></a>
+                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="twitter"><i
+                                class="bi bi-twitter"></i></a>
+                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="linkedin"><i
+                                class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="Instagram"><i
+                                class="bi bi-instagram"></i></a>
+                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="youtube"><i
+                                class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="d-flex justify-content-center pb-4 small">
+                <span>© Copyright All rights reserved 2025. Designed & Developed by
+                    <a class="text-decoration-none" href="https://brandingwaale.com/"> Brandingwaale Webtech</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar shadow on scroll
+        const nav = document.querySelector('.navbar');
+        const navShadow = () => nav.classList.toggle('scrolled', window.scrollY > 6);
+        navShadow(); window.addEventListener('scroll', navShadow);
+
+        // Reveal-on-scroll
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+        }, { threshold: 0.16 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // On-load intro reveal
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.hero .reveal').forEach((el, i) => {
+                el.style.transitionDelay = (i * 80) + 'ms';
+                el.classList.add('show');
+            });
+        });
+    </script>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form validation and submission
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Validate form
+            let isValid = true;
+            const fields = ['firstName', 'lastName', 'email', 'phone', 'subject', 'message'];
+
+            fields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                const feedback = field.nextElementSibling;
+
+                if (!field.value.trim()) {
+                    field.classList.add('is-invalid');
+                    feedback.textContent = 'This field is required';
+                    isValid = false;
+                } else if (fieldId === 'email' && !isValidEmail(field.value)) {
+                    field.classList.add('is-invalid');
+                    feedback.textContent = 'Please enter a valid email';
+                    isValid = false;
+                } else if (fieldId === 'phone' && !isValidPhone(field.value)) {
+                    field.classList.add('is-invalid');
+                    feedback.textContent = 'Please enter a valid phone number';
+                    isValid = false;
+                } else {
+                    field.classList.remove('is-invalid');
+                    field.classList.add('is-valid');
+                    feedback.textContent = '';
+                }
+            });
+
+            if (isValid) {
+                // Show success message
+                successMessage.classList.add('show');
+                contactForm.reset();
+                fields.forEach(fieldId => {
+                    document.getElementById(fieldId).classList.remove('is-valid');
+                });
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            }
+        });
+
+        // Remove validation on input
+        document.querySelectorAll('.form-control').forEach(field => {
+            field.addEventListener('input', function () {
+                this.classList.remove('is-invalid', 'is-valid');
+                this.nextElementSibling.textContent = '';
+            });
+        });
+
+        // Email validation
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // Phone validation
+        function isValidPhone(phone) {
+            return /^[\d\s\-\+$$$$]{10,}$/.test(phone.replace(/\s/g, ''));
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

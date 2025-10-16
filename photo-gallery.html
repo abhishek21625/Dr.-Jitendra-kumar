@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Latest Articles | Dr. Jitendra Kumar</title>
+    <title>Photo Gallery | Dr. Jitendra Kumar</title>
 
     <!-- Google Fonts  -->
     <link
@@ -21,6 +21,100 @@
 
     <!-- Your theme (imported)  -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        /* Masonry Gallery */
+        .gallery {
+            column-gap: 1rem;
+        }
+
+        @media (min-width: 576px) {
+            .gallery {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .gallery {
+                column-count: 3;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .gallery {
+                column-count: 4;
+            }
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin: 0 0 1rem;
+            position: relative;
+            transition: transform .2s ease, box-shadow .2s ease;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--surface);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(2, 6, 23, .15);
+            cursor: pointer;
+        }
+
+        /* Hover overlay */
+        .gallery-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, .55), transparent 60%);
+            opacity: 0;
+            transition: opacity .2s ease;
+            display: flex;
+            align-items: end;
+            padding: .75rem;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: .2px;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        /* Subtle appear animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: none;
+            transition: opacity .5s ease, transform .5s ease;
+        }
+
+        /* Modal tweaks */
+        .modal-dark .modal-content {
+            background: #0b1023;
+            color: #fff;
+            border: 0;
+            border-radius: 24px;
+        }
+
+        .modal-dark .btn-close {
+            filter: invert(1);
+        }
+
+        .modal-caption {
+            color: #94a3b8;
+        }
+    </style>
 
 </head>
 
@@ -112,14 +206,14 @@
         <div class="container">
             <div class="row justify-content-center align-items-center g-4">
                 <div class="col-lg-12 text-center">
-                    <span class="badge-accent reveal">Know Our Services</span>
-                    <h1 class="title ff-heading mt-3 reveal delay-1">Articles</h1>
+                    <span class="badge-accent reveal">Gallery</span>
+                    <h1 class="title ff-heading mt-3 reveal delay-1">Photo Gallery</h1>
                     <p class="lead text-white-50 mb-0 reveal delay-2">Learn more about the journey, education, and
                         expertise.</p>
                     <nav class="crumb mt-3 reveal delay-3" aria-label="breadcrumb">
                         <a href="index.html">Home</a>
                         <span class="sep">/</span>
-                        <span aria-current="page">Articles</span>
+                        <span aria-current="page">Photo Gallery</span>
                     </nav>
                 </div>
             </div>
@@ -128,152 +222,97 @@
 
     <section>
         <div class="container">
-            <div id="galleryGrid" class="row p-0">
-                <div class="col-6 col-md-4 col-lg-3 gallery-it rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="0" aria-label="Open image"></a>
-                        <img src="images/imgi_2_article-1.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
+            <div class="gallery" id="gallery">
+                <figure class="gallery-item fade-in" data-category="event" data-caption="">
+                    <img src="images/imgi_38_dr.jitendra-gallery7.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
 
-                <div class="col-6 col-md-4 col-lg-3 gallery-it rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="1" aria-label="Open image"></a>
-                        <img src="images/imgi_3_article-2.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
+                <figure class="gallery-item fade-in" data-category="speaker" data-caption="">
+                    <img src="images/imgi_39_dr.jitendra-gallery8.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
 
-                <div class="col-6 col-md-4 col-lg-3 gallery-it rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="2" aria-label="Open image"></a>
-                        <img src="images/imgi_4_article-3.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/imgi_48_dr.jitendra-gallery5.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
 
-                <div class="col-6 col-md-4 col-lg-3 gallery-it rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="3" aria-label="Open image"></a>
-                        <img src="images/imgi_5_article-4.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
+                 <figure class="gallery-item fade-in" data-category="group" data-caption="">
+                    <img src="images/imgi_46_dr.jitendra-gallery3.webp" alt=""
+                        loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
 
-                <div class="col-6 col-md-4 col-lg-3 gallery-it rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="4" aria-label="Open image"></a>
-                        <img src="images/imgi_6_article-5.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/imgi_42_dr.jitendra-gallery11.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
 
-                <div class="col-6 col-md-4 col-lg-3 gallery-it rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="5" aria-label="Open image"></a>
-                        <img src="images/imgi_7_article-6.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
+                <figure class="gallery-item fade-in" data-category="event" data-caption="">
+                    <img src="images/imgi_44_dr.jitendra-gallery1.webp" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
 
-                <div class="col-6 col-md-4 col-lg-3 gallery-it rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="6" aria-label="Open image"></a>
-                        <img src="images/imgi_8_article-7.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
+                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/imgi_47_dr.jitendra-gallery4.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
 
-                <div class="col-6 col-md-4 col-lg-3 gallery-it rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="7" aria-label="Open image"></a>
-                        <img src="images/imgi_9_article-8.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
+                 <figure class="gallery-item fade-in" data-category="moment" data-caption="">
+                    <img src="images/imgi_49_dr.jitendra-gallery6.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
 
-                <div class="col-6 col-md-4 col-lg-3 gallery-it rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="8" aria-label="Open image"></a>
-                        <img src="images/imgi_10_article-9.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
+                 <figure class="gallery-item fade-in" data-category="moment" data-caption="Signing copies">
+                    <img src="images/imgi_40_dr.jitendra-gallery9.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
 
-                <div class="col-6 col-md-4 col-lg-3 gallery-it rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="9" aria-label="Open image"></a>
-                        <img src="images/imgi_11_article-10.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
+                <figure class="gallery-item fade-in" data-category="group" data-caption="">
+                    <img src="images/imgi_41_dr.jitendra-gallery10.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
 
-                <div class="col-6 col-md-4 col-lg-3 rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="10" aria-label="Open image"></a>
-                        <img src="images/imgi_12_article-11.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
-
-                <div class="col-6 col-md-4 col-lg-3 rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="11" aria-label="Open image"></a>
-                        <img src="images/imgi_13_article-12.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
-
-                <div class="col-6 col-md-4 col-lg-3 rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="11" aria-label="Open image"></a>
-                        <img src="images/imgi_14_article-13.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
-
-                <div class="col-6 col-md-4 col-lg-3 rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="11" aria-label="Open image"></a>
-                        <img src="images/imgi_15_article-14.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
-
-                <!-- <div class="col-6 col-md-4 col-lg-3 rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="11" aria-label="Open image"></a>
-                        <img src="images/imgi_16_article-15.webp" alt="" loading="lazy" />
-                    </figure>
-                </div> -->
-
-                <div class="col-6 col-md-4 col-lg-3 rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="11" aria-label="Open image"></a>
-                        <img src="images/imgi_17_article-16.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
-
-                <div class="col-6 col-md-4 col-lg-3 rev">
-                    <figure class="gallery-card m-0">
-                        <a href="javaScript:void(0);" class="stretched-link" data-index="11" aria-label="Open image"></a>
-                        <img src="images/imgi_18_article-17.webp" alt="" loading="lazy" />
-                    </figure>
-                </div>
+                <figure class="gallery-item fade-in" data-category="speaker" data-caption="">
+                    <img src="images/imgi_45_dr.jitendra-gallery2.webp" alt="" loading="lazy" />
+                    <figcaption class="overlay"></figcaption>
+                </figure>
             </div>
 
         </div>
     </section>
 
-    <div class="modal fade modal-rounded" id="lightboxModal" tabindex="-1" aria-hidden="true"
-        aria-labelledby="lightboxLabel">
+    <div class="modal fade modal-dark" id="lightboxModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content p-2 p-md-3">
-                <div class="d-flex justify-content-between align-items-center px-2 px-md-3 pt-2">
-                    <h6 id="lightboxLabel" class="m-0 fw-bold text-primary">Preview</h6>
-                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal"
-                        aria-label="Close">Close</button>
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <img id="lightboxImg" class="lightbox-img" src="/placeholder.svg" alt="Expanded gallery image" />
-                    <p id="lightboxCaption" class="text-center text-muted small mt-2 mb-0"></p>
+                <div class="modal-body pt-0">
+                    <div id="lightboxCarousel" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-inner"></div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel"
+                            data-bs-slide="prev" aria-label="Previous">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel"
+                            data-bs-slide="next" aria-label="Next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <p class="mt-3 modal-caption" id="lightboxCaption"></p>
                 </div>
-                <div class="d-flex justify-content-between gap-2 px-2 px-md-3 pb-3">
-                    <button id="prevBtn" class="btn btn-outline-primary">Previous</button>
-                    <button id="nextBtn" class="btn btn-primary">Next</button>
+                <div class="modal-footer border-0 d-flex justify-content-between">
+                    <div class="small text-secondary">Use ← → keys to navigate</div>
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer (reused from your index) -->
    <footer class="pt-5">
         <div class="container">
             <div class="row g-4">
@@ -360,10 +399,10 @@
         navShadow(); window.addEventListener('scroll', navShadow);
 
         // Reveal-on-scroll
-        const io = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); revealObserver.unobserve(e.target); } });
         }, { threshold: 0.16 });
-        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
         // On-load intro reveal
         window.addEventListener('DOMContentLoaded', () => {
@@ -375,65 +414,73 @@
     </script>
 
     <script>
-        // Collect images and metadata
-        const cards = [...document.querySelectorAll('#galleryGrid .gallery-card')];
-        const items = [...document.querySelectorAll('.gallery-it')];
-        const modal = new bootstrap.Modal(document.getElementById('lightboxModal'));
-        const imgEl = document.getElementById('lightboxImg');
-        const captionEl = document.getElementById('lightboxCaption');
-        let currentIndex = 0;
+        // Filter logic
+        const filterButtons = document.querySelectorAll('.filter-bar .btn');
+        const items = document.querySelectorAll('.gallery-item');
 
-        // Build an array of gallery sources/captions
-        const gallery = cards.map(card => {
-            const img = card.querySelector('img');
-            const title = card.querySelector('.overlay-title')?.textContent?.trim() || 'Article';
-            const tag = card.closest('.gallery-it')?.classList?.[2] || '';
-            return { src: img.src, caption: title, tag };
-        });
-
-        // Open lightbox
-        document.querySelectorAll('.gallery-card .stretched-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                currentIndex = Number(link.dataset.index) || 0;
-                showInModal(currentIndex);
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const f = btn.dataset.filter;
+                items.forEach(el => {
+                    const keep = f === 'all' || el.dataset.category === f;
+                    el.style.display = keep ? '' : 'none';
+                });
             });
         });
 
-        function showInModal(i) {
-            const { src, caption } = gallery[i];
-            imgEl.src = src;
-            captionEl.textContent = caption;
-            modal.show();
-        }
-
-        // Prev/Next handlers
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
-            showInModal(currentIndex);
-        });
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % gallery.length;
-            showInModal(currentIndex);
-        });
-
-        // Keyboard navigation inside modal
-        document.getElementById('lightboxModal').addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') { document.getElementById('prevBtn').click(); }
-            if (e.key === 'ArrowRight') { document.getElementById('nextBtn').click(); }
-        });
-
-        // Reveal on scroll
-        const io2 = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                    io2.unobserve(entry.target);
-                }
-            })
+        // Appear on scroll
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('is-visible');
+            });
         }, { threshold: .15 });
+        document.querySelectorAll('.fade-in').forEach(el => fadeInObserver.observe(el));
 
-        document.querySelectorAll('.rev').forEach(el => io2.observe(el));
+        // Lightbox: build carousel slides dynamically from gallery
+        const modalEl = document.getElementById('lightboxModal');
+        const carouselEl = document.getElementById('lightboxCarousel');
+        const slidesRoot = carouselEl.querySelector('.carousel-inner');
+        const captionEl = document.getElementById('lightboxCaption');
+        const modal = new bootstrap.Modal(modalEl);
+        const carousel = new bootstrap.Carousel(carouselEl, { interval: false });
+
+        // Collect sources
+        const sources = [...items].map((el) => ({
+            src: el.querySelector('img').src,
+            alt: el.querySelector('img').alt,
+            caption: el.dataset.caption || ''
+        }));
+
+        // Build slides once
+        function buildSlides() {
+            slidesRoot.innerHTML = sources.map((s, idx) => `
+          <div class="carousel-item ${idx === 0 ? 'active' : ''}">
+            <img src="${s.src}" class="d-block w-100 rounded-4" alt="${s.alt}" />
+          </div>
+        `).join('');
+            captionEl.textContent = sources[0].caption || sources[0].alt || '';
+        }
+        buildSlides();
+
+        // Click handlers to open at correct index
+        items.forEach((el, idx) => {
+            el.addEventListener('click', () => {
+                carousel.to(idx);
+                captionEl.textContent = sources[idx].caption || sources[idx].alt || '';
+                modal.show();
+            });
+        });
+
+        // Update caption on slide
+        carouselEl.addEventListener('slid.bs.carousel', (e) => {
+            const i = e.to;
+            captionEl.textContent = sources[i].caption || sources[i].alt || '';
+        });
+
+        // Keyboard navigation hint (Bootstrap already handles arrows when focused)
+        modalEl.addEventListener('shown.bs.modal', () => carouselEl.focus());
     </script>
 
 </body>

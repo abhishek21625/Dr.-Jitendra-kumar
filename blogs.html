@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Event By Accord | Dr. Jitendra Kumar</title>
+    <title>Blogs | Dr. Jitendra Kumar</title>
 
     <!-- Google Fonts  -->
     <link
@@ -18,120 +18,143 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Your theme (imported)  -->
     <link rel="stylesheet" href="css/style.css" />
 
     <style>
-        /* Masonry Gallery */
-        .gallery {
-            column-gap: 1rem;
-        }
-
-        @media (min-width: 576px) {
-            .gallery {
-                column-count: 2;
-            }
-        }
-
-        @media (min-width: 992px) {
-            .gallery {
-                column-count: 3;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .gallery {
-                column-count: 4;
-            }
-        }
-
-        .gallery-item {
-            break-inside: avoid;
-            margin: 0 0 1rem;
-            position: relative;
-            transition: transform .2s ease, box-shadow .2s ease;
-            border-radius: 20px;
-            overflow: hidden;
-            background: var(--surface);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 28px rgba(2, 6, 23, .15);
-            cursor: pointer;
-        }
-
-        /* Hover overlay */
-        .gallery-item .overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(15, 23, 42, .55), transparent 60%);
-            opacity: 0;
-            transition: opacity .2s ease;
-            display: flex;
-            align-items: end;
-            padding: .75rem;
-            color: #fff;
-            font-weight: 600;
-            letter-spacing: .2px;
-        }
-
-        .gallery-item:hover .overlay {
-            opacity: 1;
-        }
-
-        /* Subtle appear animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-
-        .fade-in.is-visible {
-            opacity: 1;
-            transform: none;
-            transition: opacity .5s ease, transform .5s ease;
-        }
-
-        /* Floating WhatsApp-like action (example) */
-        .fab {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: var(--accent);
-            color: #fff;
+        /* Blog Grid */
+        .blog-grid {
             display: grid;
-            place-items: center;
-            box-shadow: 0 10px 22px rgba(20, 184, 166, .35);
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0;
         }
 
-        .fab:hover {
-            filter: brightness(.95);
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: fadeInUp 0.6s ease-out;
         }
 
-        /* Modal tweaks */
-        .modal-dark .modal-content {
-            background: #0b1023;
-            color: #fff;
-            border: 0;
-            border-radius: 24px;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .modal-dark .btn-close {
-            filter: invert(1);
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .modal-caption {
-            color: #94a3b8;
+        .blog-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+
+        .blog-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-meta i {
+            color: var(--primary);
+        }
+
+        .blog-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--secondary);
+            gap: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        /* Loading Animation */
+        .loading {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
         }
     </style>
 
@@ -168,7 +191,8 @@
                         <ul class="dropdown-menu fade-down shadow" aria-labelledby="servicesDropdown">
                             <li><a class="dropdown-item" href="kidneydiseases.html">Kidney Diseases</a></li>
                             <li><a class="dropdown-item" href="acutekidneyinjury.html">Acute Kidney Injury</a></li>
-                            <li><a class="dropdown-item" href="chronic-kidney-diseases.html">Chronic Kidney Diseases</a></li>
+                            <li><a class="dropdown-item" href="chronic-kidney-diseases.html">Chronic Kidney Diseases</a>
+                            </li>
                             <li><a class="dropdown-item" href="dialysis.html">Dialysis</a></li>
                             <li><a class="dropdown-item" href="nephritic_syndrome.html">Nephritic Syndrome</a></li>
                             <li><a class="dropdown-item" href="nephrotic_syndrome.html">Nephritoc Syndrome</a></li>
@@ -189,9 +213,9 @@
                             <li><a class="dropdown-item" href="book_launch.html">Book Lanuch</a></li>
                             <li><a class="dropdown-item" href="cme.html">CME</a></li>
                             <li><a class="dropdown-item" href="event_by_accord.html">Event by Accord</a></li>
-                            <li><a class="dropdown-item" href="#isot">ISOT</a></li>
-                            <li><a class="dropdown-item" href="#independence">Independence</a></li>
-                            <li><a class="dropdown-item" href="#homeopathy">Homeopathy</a></li>
+                            <li><a class="dropdown-item" href="isot.html">ISOT</a></li>
+                            <li><a class="dropdown-item" href="independence.html">Independence</a></li>
+                            <li><a class="dropdown-item" href="homepathy.html">Homeopathy</a></li>
                         </ul>
                     </li>
 
@@ -202,13 +226,13 @@
                             Gallery
                         </a>
                         <ul class="dropdown-menu fade-down shadow" aria-labelledby="galleryDropdown">
-                            <li><a class="dropdown-item" href="#photos">Photo Gallery</a></li>
-                            <li><a class="dropdown-item" href="#videos">Video Gallery</a></li>
+                            <li><a class="dropdown-item" href="photo-gallery.html">Photo Gallery</a></li>
+                            <li><a class="dropdown-item" href="video-gallery.html">Video Gallery</a></li>
                         </ul>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link fw-medium" href="#news">News</a></li>
-                    <li class="nav-item"><a class="nav-link fw-medium" href="#blogs">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="news.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="blogs.html">Blogs</a></li>
                     <li class="nav-item"><a class="nav-link fw-medium" href="#contact">Contact</a></li>
 
                 </ul>
@@ -224,14 +248,14 @@
         <div class="container">
             <div class="row justify-content-center align-items-center g-4">
                 <div class="col-lg-12 text-center">
-                    <span class="badge-accent reveal">Events</span>
-                    <h1 class="title ff-heading mt-3 reveal delay-1">Events By Accord</h1>
+                    <span class="badge-accent reveal">Read About Us</span>
+                    <h1 class="title ff-heading mt-3 reveal delay-1">Blogs</h1>
                     <p class="lead text-white-50 mb-0 reveal delay-2">Learn more about the journey, education, and
                         expertise.</p>
                     <nav class="crumb mt-3 reveal delay-3" aria-label="breadcrumb">
                         <a href="index.html">Home</a>
                         <span class="sep">/</span>
-                        <span aria-current="page">Events By Accord</span>
+                        <span aria-current="page">Blogs</span>
                     </nav>
                 </div>
             </div>
@@ -241,83 +265,93 @@
     <section>
         <div class="container">
 
-            <div class="gallery" id="gallery">
-                <figure class="gallery-item fade-in" data-category="event" data-caption="">
-                    <img src="images/eba/imgi_2_accord1.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
+            <!-- Blog Grid -->
+            <section class="blog-grid" id="blogGrid">
+                <!-- Blog Card 1 -->
+                <article class="blog-card loading" data-category="kidney">
+                    <div class="blog-image">
+                        <img src="images/blogs/imgi_3_WhatsApp-Image-2025-01-15-at-5.51.05-PM.jpg" alt="Kidney Specialist">
+                        <!-- <span class="blog-badge">Kidney Health</span> -->
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Dr. Support</span>
+                            <span><i class="fas fa-calendar"></i> Jan 15, 2025</span>
+                            <!-- <span><i class="fas fa-comments"></i> 0 Comments</span> -->
+                        </div>
+                        <h2 class="blog-title">A Comprehensive Guide for Getting the Best Kidney Specialist in Faridabad
+                        </h2>
+                        <p class="blog-excerpt">Kidney health is vital for overall well-being. They are organs of the
+                            terrible size little and relatively round shaped, play the impressive role of...</p>
+                        <a href="best-kidney-specialist-in-faridabad.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
 
-                <figure class="gallery-item fade-in" data-category="speaker" data-caption="">
-                    <img src="images/eba/imgi_3_accord2.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
+                <!-- Blog Card 2 -->
+                <article class="blog-card loading" data-category="kidney">
+                    <div class="blog-image">
+                        <img src="images/blogs/imgi_4_Acute-Kidney-Injury.webp" alt="Acute Kidney Injury">
+                        <!-- <span class="blog-badge">Kidney Health</span> -->
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Dr. Support</span>
+                            <span><i class="fas fa-calendar"></i> Jun 17, 2024</span>
+                            <!-- <span><i class="fas fa-comments"></i> 0 Comments</span> -->
+                        </div>
+                        <h2 class="blog-title">The Impact of Acute Kidney Injury on Long-Term Kidney Health: What You
+                            Need to Know</h2>
+                        <p class="blog-excerpt">Understanding Acute Kidney Injury (AKI) is a sudden episode of kidney
+                            failure or damage that occurs within a few hours...</p>
+                        <a href="impact-of-acute-kidney-injury-on-long-term-kidney-health.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
 
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/eba/imgi_4_accord3.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
+                <!-- Blog Card 3 -->
+                <article class="blog-card loading" data-category="diet">
+                    <div class="blog-image">
+                        <img src="images/blogs/imgi_5_Dr-jitender-Blog-Post-1-1.webp" alt="Diet and Kidney Disease">
+                        <!-- <span class="blog-badge">Diet & Nutrition</span> -->
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Dr. Support</span>
+                            <span><i class="fas fa-calendar"></i> May 18, 2024</span>
+                            <!-- <span><i class="fas fa-comments"></i> 0 Comments</span> -->
+                        </div>
+                        <h2 class="blog-title">The Role of Diet in Managing Kidney Disease: Tips and Nutritional
+                            Guidelines</h2>
+                        <p class="blog-excerpt">Kidney disease is a serious health condition affecting millions of
+                            people worldwide. It occurs when the kidneys are damaged and can't filter blood as...</p>
+                        <a href="the-role-of-diet-in-managing-kidney-disease.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
 
-                <figure class="gallery-item fade-in" data-category="group" data-caption="">
-                    <img src="images/eba/imgi_5_accord4.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/eba/imgi_6_accord5.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="event" data-caption="">
-                    <img src="images/eba/imgi_7_accord6.webp" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="speaker" data-caption="">
-                    <img src="images/eba/imgi_8_accord7.jpg" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="group" data-caption="">
-                    <img src="images/eba/imgi_9_accord8.webp" alt=""
-                        loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-            </div>
+                <!-- Blog Card 4 -->
+                <article class="blog-card loading" data-category="specialist">
+                    <div class="blog-image">
+                        <img src="images/blogs/imgi_6_Best-Nephrologists-in-Faridabad.webp" alt="Nephrologists">
+                        <!-- <span class="blog-badge">Specialists</span> -->
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Dr. Support</span>
+                            <span><i class="fas fa-calendar"></i> Apr 22, 2024</span>
+                            <!-- <span><i class="fas fa-comments"></i> 0 Comments</span> -->
+                        </div>
+                        <h2 class="blog-title">Finding the Best Nephrologists in Faridabad</h2>
+                        <p class="blog-excerpt">In the bustling city of Faridabad, where health concerns are paramount,
+                            finding the right nephrologist becomes crucial, especially when kidney health is at stake...
+                        </p>
+                        <a href="best-nephrologists-in-faridabad.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </section>
 
         </div>
     </section>
 
-    <div class="modal fade modal-dark" id="lightboxModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title">Preview</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body pt-0">
-                    <div id="lightboxCarousel" class="carousel slide" data-bs-ride="false">
-                        <div class="carousel-inner"></div>
-
-                        <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel"
-                            data-bs-slide="prev" aria-label="Previous">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel"
-                            data-bs-slide="next" aria-label="Next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        </button>
-                    </div>
-                    <p class="mt-3 modal-caption" id="lightboxCaption"></p>
-                </div>
-                <div class="modal-footer border-0 d-flex justify-content-between">
-                    <div class="small text-secondary">Use ← → keys to navigate</div>
-                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-   <footer class="pt-5">
+    <footer class="pt-5">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4">
@@ -389,7 +423,7 @@
             </div>
         </div>
     </footer>
-    
+
     <!-- Bootstrap JS + Page JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -418,73 +452,35 @@
     </script>
 
     <script>
-        // Filter logic
-        const filterButtons = document.querySelectorAll('.filter-bar .btn');
-        const items = document.querySelectorAll('.gallery-item');
+        // Add staggered animation to cards on load
+        blogCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
 
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const f = btn.dataset.filter;
-                items.forEach(el => {
-                    const keep = f === 'all' || el.dataset.category === f;
-                    el.style.display = keep ? '' : 'none';
-                });
+        // Smooth scroll for read more links
+        document.querySelectorAll('.read-more').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Redirecting to full article...');
             });
         });
 
-        // Appear on scroll
-        const fadeInObserver = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) e.target.classList.add('is-visible');
+        // Add scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
-        }, { threshold: .15 });
-        document.querySelectorAll('.fade-in').forEach(el => fadeInObserver.observe(el));
+        }, observerOptions);
 
-        // Lightbox: build carousel slides dynamically from gallery
-        const modalEl = document.getElementById('lightboxModal');
-        const carouselEl = document.getElementById('lightboxCarousel');
-        const slidesRoot = carouselEl.querySelector('.carousel-inner');
-        const captionEl = document.getElementById('lightboxCaption');
-        const modal = new bootstrap.Modal(modalEl);
-        const carousel = new bootstrap.Carousel(carouselEl, { interval: false });
-
-        // Collect sources
-        const sources = [...items].map((el) => ({
-            src: el.querySelector('img').src,
-            alt: el.querySelector('img').alt,
-            caption: el.dataset.caption || ''
-        }));
-
-        // Build slides once
-        function buildSlides() {
-            slidesRoot.innerHTML = sources.map((s, idx) => `
-          <div class="carousel-item ${idx === 0 ? 'active' : ''}">
-            <img src="${s.src}" class="d-block w-100 rounded-4" alt="${s.alt}" />
-          </div>
-        `).join('');
-            captionEl.textContent = sources[0].caption || sources[0].alt || '';
-        }
-        buildSlides();
-
-        // Click handlers to open at correct index
-        items.forEach((el, idx) => {
-            el.addEventListener('click', () => {
-                carousel.to(idx);
-                captionEl.textContent = sources[idx].caption || sources[idx].alt || '';
-                modal.show();
-            });
-        });
-
-        // Update caption on slide
-        carouselEl.addEventListener('slid.bs.carousel', (e) => {
-            const i = e.to;
-            captionEl.textContent = sources[i].caption || sources[i].alt || '';
-        });
-
-        // Keyboard navigation hint (Bootstrap already handles arrows when focused)
-        modalEl.addEventListener('shown.bs.modal', () => carouselEl.focus());
+        blogCards.forEach(card => observer.observe(card));
     </script>
 
 </body>

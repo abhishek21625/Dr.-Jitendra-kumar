@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Role Of Diet in Managing Kidney Disease | Dr. Jitendra Kumar</title>
+
+    <!-- Google Fonts  -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Bootstrap 5  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Your theme (imported)  -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: zoomIn 0.8s ease-out;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(1.1);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Article Meta */
+        .article-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-item i {
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .meta-item a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .meta-item a:hover {
+            color: var(--secondary);
+        }
+
+        /* Article Content */
+        .article-container {
+            /* max-width: 900px; */
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .article-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.6rem;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 58, 139, 0.1) 0%, rgba(233, 30, 99, 0.1) 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Related Articles */
+        .related-section {
+            /* margin-top: 4rem; */
+            padding-top: 3rem;
+            /* border-top: 2px solid black; */
+        }
+
+        .related-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            /* color: var(--dark); */
+        }
+
+        .related-articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .article-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover .article-card-image {
+            transform: scale(1.05);
+        }
+
+        .article-card-content {
+            padding: 1.5rem;
+        }
+
+        .article-card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .article-card-meta {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--secondary);
+            gap: 0.8rem;
+        }
+
+        /* Comments Section */
+        .comments-section {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 2px solid black;
+        }
+
+        .comments-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .comment-form {
+            background: radial-gradient(1200px 400px at 90% -10%,
+                    rgba(90, 54, 240, 0.12),
+                    transparent 60%),
+                radial-gradient(900px 300px at -10% 20%,
+                    rgba(18, 183, 106, 0.1),
+                    transparent 60%),
+                #0b1530;
+            padding: 2rem;
+            border-radius: 8px;
+            /* margin-bottom: 2rem; */
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .form-control {
+            /* border: 1px solid rgb(81, 81, 81); */
+            border-radius: 4px;
+            padding: 0.75rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(139, 58, 139, 0.1);
+            outline: none;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background-color: #D6AE35;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 58, 139, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-title {
+                font-size: 1.6rem;
+            }
+
+            .article-meta {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .related-articles {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg py-3 fixed-top bg-light">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html" aria-label="Kidney Care Home">
+                <img src="images/Logo.png" alt="Dr Jitendra Kumar Logo" class="img-fluid" style="max-height: 60px;">
+            </a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div id="nav" class="collapse navbar-collapse justify-content-center">
+                <ul class="navbar-nav gap-lg-1 align-items-lg-center">
+
+                    <li class="nav-item"><a class="nav-link fw-medium" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="about.html">About</a></li>
+
+                    <!-- Services Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-medium" href="#" id="servicesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu fade-down shadow" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="kidneydiseases.html">Kidney Diseases</a></li>
+                            <li><a class="dropdown-item" href="acutekidneyinjury.html">Acute Kidney Injury</a></li>
+                            <li><a class="dropdown-item" href="chronic-kidney-diseases.html">Chronic Kidney Diseases</a>
+                            </li>
+                            <li><a class="dropdown-item" href="dialysis.html">Dialysis</a></li>
+                            <li><a class="dropdown-item" href="nephritic_syndrome.html">Nephritic Syndrome</a></li>
+                            <li><a class="dropdown-item" href="nephrotic_syndrome.html">Nephritoc Syndrome</a></li>
+                            <li><a class="dropdown-item" href="renal_biopsy.html">Renal (Kidney) Biopsy</a></li>
+                            <li><a class="dropdown-item" href="kidney_transplant.html">Renal (Kidney) Transplant</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Events Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-medium" href="#" id="eventsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Events
+                        </a>
+                        <ul class="dropdown-menu fade-down shadow" aria-labelledby="eventsDropdown">
+                            <li><a class="dropdown-item" href="article.html">Article</a></li>
+                            <li><a class="dropdown-item" href="book_launch.html">Book Lanuch</a></li>
+                            <li><a class="dropdown-item" href="cme.html">CME</a></li>
+                            <li><a class="dropdown-item" href="event_by_accord.html">Event by Accord</a></li>
+                            <li><a class="dropdown-item" href="isot.html">ISOT</a></li>
+                            <li><a class="dropdown-item" href="independence.html">Independence</a></li>
+                            <li><a class="dropdown-item" href="homepathy.html">Homeopathy</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Gallery Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-medium" href="#" id="galleryDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Gallery
+                        </a>
+                        <ul class="dropdown-menu fade-down shadow" aria-labelledby="galleryDropdown">
+                            <li><a class="dropdown-item" href="photo-gallery.html">Photo Gallery</a></li>
+                            <li><a class="dropdown-item" href="video-gallery.html">Video Gallery</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link fw-medium" href="news.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="blogs.html">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="#contact">Contact</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Book Appointment Button -->
+            <a class="btn btn-cta text-white px-4 py-2" href="#contact">Book Appointment</a>
+
+        </div>
+    </nav>
+
+    <header class="about-hero pb-5" style="padding-top: 150px;">
+        <div class="container">
+            <div class="row justify-content-center align-items-center g-4">
+                <div class="col-lg-12 text-center">
+                    <span class="badge-accent reveal">Read About Us</span>
+                    <h1 class="title ff-heading mt-3 reveal delay-1">Blogs</h1>
+                    <p class="lead text-white-50 mb-0 reveal delay-2">Learn more about the journey, education, and
+                        expertise.</p>
+                    <nav class="crumb mt-3 reveal delay-3" aria-label="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span class="sep">/</span>
+                        <a href="blogs.html">Blogs</a>
+                        <span class="sep">/</span>
+                        <span aria-current="page">The Role of Diet in Managing Kidney Disease: Tips and Nutritional
+                            Guidelines</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+
+            <div class="hero-section">
+                <img src="images/blogs/imgi_4_Acute-Kidney-Injury.webp" alt="Acute Kidney Injury" class="hero-image">
+                <div class="hero-overlay">
+                    <!-- <div class="hero-content">
+                        <h1>The Impact of Acute Kidney Injury on Long-Term Kidney Health</h1>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="article-container">
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-user"></i>
+                        <span>By <a href="#support">Dr. Support</a></span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>June 17, 2024</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-tag"></i>
+                        <span><a href="#aki">Acute Kidney Injury</a></span>
+                    </div>
+                    <!-- <div class="meta-item">
+                        <i class="fas fa-comments"></i>
+                        <span>0 Comments</span>
+                    </div> -->
+                </div>
+
+                <h1 class="article-title">The Role of Diet in Managing Kidney Disease: Tips and Nutritional Guidelines
+                </h1>
+
+                <div class="article-content fade-in">
+                    <p>Kidney disease is a serious health condition affecting millions of people worldwide. It occurs
+                        when the kidneys are damaged and can’t filter blood as they should. Managing kidney disease
+                        involves various approaches, and one of the most crucial aspects is diet.</p>
+
+                    <div class="highlight-box">
+                        <strong>Key Point:</strong> Early detection and treatment of AKI can significantly improve
+                        outcomes and reduce the risk of long-term kidney damage.
+                    </div>
+
+                    <h2>Introduction to Kidney Disease</h2>
+                    <p>Kidneys play a vital role in maintaining overall health by filtering waste and excess fluids from
+                        the blood, regulating electrolyte balance, and producing hormones that control blood pressure
+                        and red blood cell production. When kidneys are impaired, waste products and fluids can build up
+                        in the body, leading to complications such as high blood pressure, cardiovascular disease, and
+                        kidney failure.</p>
+
+                    <h2>Importance of Diet in Managing Kidney Disease</h2>
+                    <p>Dietary management is integral to the treatment of kidney disease. A well-planned diet can help
+                        alleviate symptoms, slow the progression of the disease, and improve overall quality of life. By
+                        making careful food choices and adhering to nutritional guidelines, individuals with kidney
+                        disease can better manage their condition and reduce the risk of complications.</p>
+                    <!-- <ul>
+                        <li>Decreased urine output</li>
+                        <li>Discolored urine output</li>
+                        <li>Swelling in the legs, ankles, or around the eyes</li>
+                        <li>Shortness of breath</li>
+                        <li>Confusion</li>
+                        <li>Nausea and vomiting</li>
+                    </ul> -->
+
+                    <h2>Understanding Kidney-Friendly Diet</h2>
+                    <p>A kidney-friendly diet focuses on controlling the intake of certain nutrients that can burden the
+                        kidneys and exacerbate symptoms. Key considerations include:</p>
+
+                    <h3>Key Nutrients for Kidney Health</h3>
+                    <p>Protein: Opt for high-quality sources such as lean meats, fish, poultry, eggs, and dairy
+                        products. Limit protein intake to prevent the buildup of waste products.
+
+                        Potassium: Monitor potassium levels by choosing low-potassium fruits and vegetables and avoiding
+                        high-potassium foods like bananas, oranges, potatoes, and tomatoes.
+
+                        Phosphorus: Limit phosphorus-rich foods such as dairy products, nuts, seeds, and processed foods
+                        to prevent bone and heart complications.
+
+                        Sodium: Reduce sodium intake to control blood pressure and fluid retention. Avoid processed
+                        foods, canned soups, and salty snacks.</p>
+
+                    <h2>Foods to Limit or Avoid</h2>
+                    <ul>
+                        <li>Processed meats</li>
+                        <li>High-sodium foods</li>
+                        <li>High-potassium foods</li>
+                        <li>Foods high in phosphorus</li>
+                        <li>Sugary beverages</li>
+                    </ul>
+
+                    <h2>Tips for Creating a Kidney-Friendly Diet Plan</h2>
+                    <p>Designing a kidney-friendly diet plan involves careful consideration of portion sizes, nutrient
+                        balance, and individual dietary preferences. Here are some practical tips to help:</p>
+
+                    <h2>Portion Control</h2>
+                    <ul>
+                        <li>Use smaller plates to control portion sizes.</li>
+                        <li>Measure serving sizes of proteins, grains, and vegetables.</li>
+                        <li>Avoid oversized restaurant meals.</li>
+                    </ul>
+
+                    <h2>Monitoring Fluid Intake</h2>
+                    <ul>
+                        <li>Limit fluid intake to avoid fluid overload and swelling.</li>
+                        <li>Monitor thirst cues and drink water in moderation.</li>
+                        <li>Choose ice chips or small sips of water between meals.</li>
+                    </ul>
+
+                    <h2>Incorporating High-Quality Protein</h2>
+                    <ul>
+                        <li>Choose lean cuts of meat and poultry.</li>
+                        <li>Incorporate plant-based protein sources such as beans, lentils, and tofu.</li>
+                        <li>Consult with a dietitian to determine the appropriate protein intake for individual needs.
+                        </li>
+                    </ul>
+
+                    <h2>Choosing the Right Carbohydrates</h2>
+                    <ul>
+                        <li>Opt for complex carbohydrates like whole grains, fruits, and vegetables.</li>
+                        <li>Limit refined carbohydrates and sugary snacks to control blood sugar levels.</li>
+                    </ul>
+
+                    <h2>Nutritional Guidelines for Kidney Disease Patients</h2>
+                    <p>In addition to specific dietary considerations, kidney disease patients should adhere to the
+                        following nutritional guidelines:</p>
+
+                    <h2>Sodium Restriction</h2>
+                    <ul>
+                        <li>Aim for less than 2,300 milligrams of sodium per day.</li>
+                        <li>Use herbs, spices, and lemon juice to flavor foods instead of salt.</li>
+                        <li>Read food labels to identify hidden sources of sodium.</li>
+                    </ul>
+
+                    <h2>Potassium Management</h2>
+                    <ul>
+                        <li>Limit high-potassium foods such as bananas, oranges, and potatoes.</li>
+                        <li>Choose low-potassium alternatives like apples, berries, and cucumbers.</li>
+                        <li>Soak vegetables in water to reduce potassium content before cooking.</li>
+                    </ul>
+
+                    <h2>Phosphorus Control</h2>
+                    <ul>
+                        <li>Avoid phosphorus additives in processed foods.</li>
+                        <li>Choose low-phosphorus dairy products and limit intake of nuts and seeds.</li>
+                        <li>Take phosphate binders as prescribed to reduce phosphorus absorption.</li>
+                    </ul>
+
+                    <h2>Protein Adjustment</h2>
+                    <ul>
+                        <li>Monitor protein intake to avoid overburdening the kidneys.</li>
+                        <li>Adjust protein intake based on individual needs and stage of kidney disease.</li>
+                        <li>Consider protein supplements under the guidance of a healthcare professional.</li>
+                    </ul>
+
+                    <h2>Importance of Regular Monitoring and Adjustments</h2>
+                    <p>Regular monitoring of kidney function and nutritional status is essential for individuals with kidney disease. Healthcare providers may conduct blood tests to assess kidney function, electrolyte levels, and nutritional markers. Based on the results, adjustments to the diet or medication regimen may be recommended to optimize health outcomes and prevent complications.</p>
+
+                    <h2>Lifestyle Modifications to Support Kidney Health</h2>
+                    <p>In addition to dietary changes, lifestyle modifications can further support kidney health and overall well-being. These may include:</p>
+                    <ul>
+                        <li>Regular exercise to improve cardiovascular health and maintain a healthy weight.</li>
+                        <li>Smoking cessation to reduce the risk of kidney damage and cardiovascular disease.</li>
+                        <li>Stress management techniques such as meditation, yoga, or deep breathing exercises.</li>
+                        <li>Limiting alcohol consumption to promote liver and kidney function.</li>
+                    </ul>
+
+                    <h2>Conclusion</h2>
+                    <p>In conclusion, diet plays a crucial role in managing kidney disease and promoting overall health.
+                        By following a kidney-friendly diet that emphasizes nutrient balance and portion control,
+                        individuals with kidney disease can better manage their condition, slow disease progression, and
+                        improve quality of life. Working closely with a nephrologist and registered dietitian is
+                        essential to develop a personalized dietary plan that meets individual needs and supports
+                        optimal health outcomes.</p>
+                </div>
+
+                <div class="related-section">
+                    <h2 class="related-title">Related Articles</h2>
+                    <div class="related-articles">
+                        <div class="article-card fade-in">
+                            <img src="images/blogs/imgi_3_WhatsApp-Image-2025-01-15-at-5.51.05-PM.jpg"
+                                alt="Kidney Specialist" class="article-card-image">
+                            <div class="article-card-content">
+                                <h3 class="article-card-title">A Comprehensive Guide for Getting the Best Kidney
+                                    Specialist in Faridabad</h3>
+                                <div class="article-card-meta">January 15, 2025 • 0 Comments</div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="article-card fade-in">
+                            <img src="images/blogs/imgi_4_Acute-Kidney-Injury.webp"
+                                alt="Kidney Specialist" class="article-card-image">
+                            <div class="article-card-content">
+                                <h3 class="article-card-title">The Impact of Acute Kidney Injury on Long-Term Kidney Health: What You Need to Know</h3>
+                                <div class="article-card-meta">January 15, 2025 • 0 Comments</div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="article-card fade-in">
+                            <img src="images/blogs/imgi_6_Best-Nephrologists-in-Faridabad.webp" alt="Best Nephrologists"
+                                class="article-card-image">
+                            <div class="article-card-content">
+                                <h3 class="article-card-title">Finding the Best Nephrologists in Faridabad</h3>
+                                <div class="article-card-meta">April 22, 2024 • 0 Comments</div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comments-section">
+                    <h2 class="comments-title">Leave a Comment</h2>
+                    <form class="comment-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">Your Name *</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email">Your Email *</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <input type="url" class="form-control" id="website" placeholder="Your Website">
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Your Comment *</label>
+                            <textarea class="form-control" id="comment" placeholder="Your Comment" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Post Comment</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="pt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html"
+                            aria-label="Kidney Care Home">
+                            <img src="images/Logo.png" alt="Dr Jitendra Kumar Logo"
+                                class="img-fluid border rounded bg-white p-1" style="max-height: 60px;">
+                        </a>
+                    </div>
+                    <p class="mb-2">Dr. Jitendra Kumar</p>
+                    <ul class="list-unstyled small">
+                        <li><i class="bi bi-telephone me-2"></i> +91 81780 19467</li>
+                        <li><i class="bi bi-envelope me-2"></i> info@example.com</li>
+                        <li><i class="bi bi-geo-alt me-2"></i> Accord Superspeciality Hospital, Sector-86,
+                            Faridabad-121002</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="text-white">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-white">Our Services</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="kidneydiseases.html">Kidney Diseases</a></li>
+                        <li><a href="acute_kidney_injury.html">Acute Kidney Injury</a></li>
+                        <li><a href="chronic-kidney-diseases.html">Chronic Kidney Diseases</a></li>
+                        <li><a href="dialysis.html">Dialysis</a></li>
+                        <li><a href="nephritic_syndrome.html">Nephritic Syndrome</a></li>
+                        <li><a href="nephrotic_syndrome.html">Nephrotic Syndrome</a></li>
+                        <li><a href="renal_biopsy.html">Renal Biopsy</a></li>
+                        <li><a href="kidney_transplant.html">Renal Transplant</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-white">Meeting Hours</h6>
+                    <ul class="list-unstyled small">
+                        <li>Mon–Fri: 09:00–20:00</li>
+                        <li>Sat-Sun: Closed</li>
+                    </ul>
+                    <div class="d-flex gap-2">
+                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="WhatsApp"><i
+                                class="bi bi-whatsapp"></i></a>
+                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="Facebook"><i
+                                class="bi bi-facebook"></i></a>
+                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="twitter"><i
+                                class="bi bi-twitter"></i></a>
+                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="linkedin"><i
+                                class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="Instagram"><i
+                                class="bi bi-instagram"></i></a>
+                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="youtube"><i
+                                class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="d-flex justify-content-center pb-4 small">
+                <span>© Copyright All rights reserved 2025. Designed & Developed by
+                    <a class="text-decoration-none" href="https://brandingwaale.com/"> Brandingwaale Webtech</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS + Page JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Navbar shadow on scroll
+        const nav = document.querySelector('.navbar');
+        const navShadow = () => nav.classList.toggle('scrolled', window.scrollY > 6);
+        navShadow(); window.addEventListener('scroll', navShadow);
+
+        // Reveal-on-scroll
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); revealObserver.unobserve(e.target); } });
+        }, { threshold: 0.16 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // On-load intro reveal
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.hero .reveal').forEach((el, i) => {
+                el.style.transitionDelay = (i * 80) + 'ms';
+                el.classList.add('show');
+            });
+        });
+    </script>
+
+    <script>
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form Submission
+        document.querySelector('.comment-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comment = document.getElementById('comment').value;
+
+            if (name && email && comment) {
+                alert('Thank you for your comment! It will be reviewed and published shortly.');
+                this.reset();
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
