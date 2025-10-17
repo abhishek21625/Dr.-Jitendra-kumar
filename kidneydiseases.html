@@ -24,24 +24,23 @@
 
 <body>
     <!-- Navbar (reused from your index)  -->
-    <nav class="navbar navbar-expand-lg py-3 fixed-top bg-light">
+   <nav class="navbar navbar-expand-lg py-3 fixed-top bg-light">
         <div class="container d-flex justify-content-between align-items-center">
 
             <!-- Logo -->
             <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html" aria-label="Kidney Care Home">
-                <img src="images/Logo.png" alt="Dr Jitendra Kumar Logo" class="img-fluid" style="max-height: 60px;">
+                <img src="images/Logo.png" alt="Dr Jitendra Kumar Logo" class="img-fluid" style="max-height: 55px;">
             </a>
 
             <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
-                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <!-- Nav Links -->
-            <div id="nav" class="collapse navbar-collapse justify-content-center">
+            <div id="nav" class="collapse navbar-collapse justify-content-lg-center">
                 <ul class="navbar-nav gap-lg-1 align-items-lg-center">
-
                     <li class="nav-item"><a class="nav-link fw-medium" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link fw-medium" href="about.html">About</a></li>
 
@@ -53,13 +52,15 @@
                         </a>
                         <ul class="dropdown-menu fade-down shadow" aria-labelledby="servicesDropdown">
                             <li><a class="dropdown-item" href="kidneydiseases.html">Kidney Diseases</a></li>
-                            <li><a class="dropdown-item" href="acutekidneyinjury.html">Acute Kidney Injury</a></li>
-                            <li><a class="dropdown-item" href="chronic-kidney-diseases.html">Chronic Kidney Diseases</a></li>
+                            <li><a class="dropdown-item" href="acute_kidney_injury.html">Acute Kidney Injury</a></li>
+                            <li><a class="dropdown-item" href="chronic-kidney-diseases.html">Chronic Kidney Diseases</a>
+                            </li>
                             <li><a class="dropdown-item" href="dialysis.html">Dialysis</a></li>
                             <li><a class="dropdown-item" href="nephritic_syndrome.html">Nephritic Syndrome</a></li>
-                            <li><a class="dropdown-item" href="nephrotic_syndrome.html">Nephritoc Syndrome</a></li>
+                            <li><a class="dropdown-item" href="nephrotic_syndrome.html">Nephrotic Syndrome</a></li>
                             <li><a class="dropdown-item" href="renal_biopsy.html">Renal (Kidney) Biopsy</a></li>
-                            <li><a class="dropdown-item" href="kidney_transplant.html">Renal (Kidney) Transplant</a></li>
+                            <li><a class="dropdown-item" href="kidney_transplant.html">Renal (Kidney) Transplant</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -70,13 +71,13 @@
                             Events
                         </a>
                         <ul class="dropdown-menu fade-down shadow" aria-labelledby="eventsDropdown">
-                            <li><a class="dropdown-item" href="#article">Article</a></li>
-                            <li><a class="dropdown-item" href="#booklaunch">Book Lanuch</a></li>
-                            <li><a class="dropdown-item" href="#cme">CME</a></li>
-                            <li><a class="dropdown-item" href="#eventbyaccord">Event by Accord</a></li>
-                            <li><a class="dropdown-item" href="#isot">ISOT</a></li>
-                            <li><a class="dropdown-item" href="#independence">Independence</a></li>
-                            <li><a class="dropdown-item" href="#homeopathy">Homeopathy</a></li>
+                            <li><a class="dropdown-item" href="article.html">Article</a></li>
+                            <li><a class="dropdown-item" href="book_launch.html">Book Launch</a></li>
+                            <li><a class="dropdown-item" href="cme.html">CME</a></li>
+                            <li><a class="dropdown-item" href="event_by_accord.html">Event by Accord</a></li>
+                            <li><a class="dropdown-item" href="isot.html">ISOT</a></li>
+                            <li><a class="dropdown-item" href="independence.html">Independence</a></li>
+                            <li><a class="dropdown-item" href="homepathy.html">Homeopathy</a></li>
                         </ul>
                     </li>
 
@@ -87,21 +88,26 @@
                             Gallery
                         </a>
                         <ul class="dropdown-menu fade-down shadow" aria-labelledby="galleryDropdown">
-                            <li><a class="dropdown-item" href="#photos">Photo Gallery</a></li>
-                            <li><a class="dropdown-item" href="#videos">Video Gallery</a></li>
+                            <li><a class="dropdown-item" href="photo-gallery.html">Photo Gallery</a></li>
+                            <li><a class="dropdown-item" href="video-gallery.html">Video Gallery</a></li>
                         </ul>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link fw-medium" href="#news">News</a></li>
-                    <li class="nav-item"><a class="nav-link fw-medium" href="#blogs">Blogs</a></li>
-                    <li class="nav-item"><a class="nav-link fw-medium" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="news.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="blogs.html">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="contact.html">Contact</a></li>
 
+                    <!-- CTA Button inside collapse for mobile -->
+                    <li class="nav-item d-lg-none mt-3">
+                        <a class="btn btn-cta w-100 text-white py-2" href="contact.html"><i
+                                class="bi bi-calendar me-2"></i>Book Appointment</a>
+                    </li>
                 </ul>
             </div>
 
-            <!-- Book Appointment Button -->
-            <a class="btn btn-cta text-white px-4 py-2" href="#contact">Book Appointment</a>
-
+            <!-- CTA Button (Desktop only) -->
+            <a class="btn btn-cta text-white px-4 py-2 d-none d-lg-inline-block" href="contact.html"><i
+                    class="bi bi-calendar me-2"></i>Book Appointment</a>
         </div>
     </nav>
 
@@ -170,8 +176,7 @@
                 <section class="col-lg-8 py-0">
 
                     <figure class="k-card p-0 overflow-hidden mb-3">
-                        <img class="w-100" style="object-fit: cover"
-                            src="images/kd-pg.jpg"
+                        <img class="w-100" style="object-fit: cover" src="images/kd-pg.jpg"
                             alt="Medical illustration of kidneys" />
                     </figure>
 
@@ -226,6 +231,9 @@
                         </p>
 
                         <h6 class="fw-semibold mt-3">In brief, how the kidneys work:</h6>
+                        <p class="text-secondary">Now, let's delve into the workings of this remarkable system, keeping
+                            in mind that if you're seeking the expertise of a kidney specialist in Faridabad, you're
+                            entrusting your renal health to a highly trained medical professional.</p>
                         <ol class="mb-3">
                             <li>First, the renal arteries supply blood to the kidneys.</li>
                             <li>Inside the kidneys, millions of filters called glomeruli filter blood to form urine.
@@ -237,7 +245,9 @@
                             <li>The bladder holds urine until it is passed out of the body.</li>
                         </ol>
 
-                        <h6 class="fw-semibold mt-3">Kidneys help to control:</h6>
+                        <h6 class="fw-semibold mt-3">Kidneys also help keep your body chemicals in balance.</h6>
+                        <p class="text-secondary">Specifically, the kidneys produce different hormones and chemicals
+                            that:</p>
                         <ol>
                             <li>
                                 Prompt the bone marrow to make red blood cells. Red blood cells help oxygen get carried
@@ -282,7 +292,7 @@
                     </article>
 
                     <!-- Accordions -->
-                    <div id="faqs" class="k-card p-0">
+                    <div id="faqs" class="pt-3">
                         <div class="accordion" id="kdAccordion">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
@@ -293,9 +303,41 @@
                                 </h2>
                                 <div id="causes" class="accordion-collapse collapse" data-bs-parent="#kdAccordion">
                                     <div class="accordion-body">
-                                        Diabetes, high blood pressure, recurrent infections, autoimmune disease,
-                                        inherited disorders, kidney stones/obstruction, and certain medications or
-                                        toxins.
+                                        There are several different diseases and conditions that are known causes of
+                                        kidney failure. For some people, however, the cause is never known.<br><br>
+
+                                        The most common causes are :<br><br>
+
+                                        Diabetes can damage the small blood vessels (glomeruli) in the kidneys.<br><br>
+
+                                        Hypertension (high blood pressure that is not treated) can also damage the small
+                                        blood vessels (glomeruli) in the kidneys. If the high blood pressure continues,
+                                        the kidneys may fail.<br><br>
+
+                                        <strong>Other causes</strong><br><br>
+
+                                        Glomerulonephritis is inflammation of the small blood vessels in the kidney.
+                                        This disease usually affects both kidneys and causes steady damage. It may be
+                                        hereditary.<br><br>
+
+                                        Other diseases such as lupus may also damage the kidneys.<br><br>
+
+                                        A blockage is any condition where urine cannot flow out of the kidney. The
+                                        blockage makes it difficult for the kidneys to remove wastes and extra fluids.
+                                        Obstructive uropathy is a blockage of urine flow out of the kidney, which may be
+                                        caused by kidney stones or a birth defect of the kidney.<br><br>
+
+                                        Infection is the most common disorder of the urinary tract. Cystitis is a
+                                        bladder infection. Symptoms include urgent, frequent, painful urination. If not
+                                        treated, cystitis may lead to a kidney infection.<br><br>
+
+                                        Pyelonephritis is a kidney infection that may be caused by a kidney birth
+                                        defect. Someone who has this infection may or may not feel sick. Possible
+                                        symptoms include fever, back pain, and chills.<br><br>
+
+                                        Polycystic kidney disease (PKD), a hereditary condition, can lead to kidney
+                                        failure. When someone has this disease, cysts grow and damage the kidneys. Then
+                                        the kidneys enlarge, and eventually they stop working.
                                     </div>
                                 </div>
                             </div>
@@ -309,8 +351,62 @@
                                 </h2>
                                 <div id="symptoms" class="accordion-collapse collapse" data-bs-parent="#kdAccordion">
                                     <div class="accordion-body">
-                                        Swelling of feet/face, blood in urine, frothy urine, fatigue, nausea, shortness
-                                        of breath, high BP, reduced urine output, and sleep problems.
+                                        Early on, people may not have any symptoms to tell them that their kidneys are
+                                        not working well.<br><br>
+
+                                        That is why regular physical check up, with blood tests and urine tests, are so
+                                        important. Test results may show signs of kidney disease even when a patient
+                                        feels fine.<br><br>
+
+                                        As the kidney disease progresses, a person may feel sick sometimes. But the
+                                        change may be so slow that he or she does not do anything about these feelings.
+                                        Symptoms may also be due to another illness or problem.<br><br>
+
+                                        Complete kidney failure, however, causes many changes in the body, and people
+                                        feel some stronger symptoms.<br><br>
+
+                                        Symptoms vary from person to person.<br><br>
+
+                                        <strong>Feeling generally sick</strong> <br><br>
+
+                                        When the kidneys begin to fail, waste products will build up in the blood. This
+                                        may cause a person to feel generally sick. Symptoms may include fatigue, nausea,
+                                        vomiting, loss of appetite, itching, and/or disturbed sleep. <br><br>
+
+                                        <strong>Fluid retention</strong> <br><br>
+
+                                        The kidneys may produce less urine, which may cause extra fluid to build up in
+                                        the body. This is called edema. People with this problem may have swollen hands
+                                        and ankles. They may gain fluid weight, and/or may be short of breath doing
+                                        activities such as walking or climbing a few stairs. <br><br>
+
+                                        <strong>Anemia</strong> <br><br>
+
+                                        The body will not produce as many red blood cells when the kidneys are not
+                                        working. This is called anemia. People with anemia may feel weak and tired. A
+                                        drug that acts like the body's own hormone, erythropoietin, stimulates the
+                                        production of red blood cells. The drug may be used to treat this type of
+                                        anemia. <br><br>
+
+                                        <strong>Toxin build up</strong> <br><br>
+
+                                        When the kidneys are not working to clean the blood, waste products called
+                                        toxins will build up in the body. This may cause fatigue, loss of appetite, and
+                                        may make the person's skin feel itchy. <br><br>
+
+                                        <strong>Other symptoms</strong> <br><br>
+
+                                        Other symptoms may include: <br><br>
+
+                                        <ul>
+                                            <li>Headache</li>
+                                            <li>Diarrhea</li>
+                                            <li>Decrease in frequency of urination</li>
+                                            <li>Drowsiness or confusion</li>
+                                            <li>Puffiness around the eyes</li>
+                                            <li>Decreased interest in sex</li>
+                                            <li>Feeling cold</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -324,8 +420,51 @@
                                 </h2>
                                 <div id="prevention" class="accordion-collapse collapse" data-bs-parent="#kdAccordion">
                                     <div class="accordion-body">
-                                        Control sugar and BP, maintain healthy weight, avoid smoking, exercise daily,
-                                        limit salt, stay hydrated, and follow medical advice regularly.
+                                        Just as we have measures to prevent heart disease, kidney disease can also be
+                                        prevented. <br><br>
+
+                                        <ul>
+                                            <li>Keep body weight normal and not allow obesity.</li>
+                                            <li>Balanced diet, low in salt and sugar and low in saturated fats. Use
+                                                mustard oil and sunflower oil for cooking.</li>
+                                            <li>Regular exercise e.g. brisk walking, aerobics.</li>
+                                            <li>No Smoking.</li>
+                                            <li>Regular medical check ups every 6 months or after one year.</li>
+                                        </ul> <br><br>
+
+                                        If kidney disease has developed, then in the early stages a lot can be done to
+                                        prevent further progression of kidney disease. <br><br>
+
+                                        People get very alarmed when they find that their blood urea or Serum creatinine
+                                        are elevated or if the protein/albumin excretion in urine is increased.<br><br>
+
+                                        <ul>
+                                            <li>If the patient is a diabetic and hypertensive, then control of diabetes
+                                                and hypertension and addition of certain medication can control the
+                                                disease. Certain medication should be absolutely avoided if kidney
+                                                disease has set in e.g. certain pain killers, antibiotics e.g.
+                                                aminoglycosides etc.</li>
+                                            <li>Acute renal failure can occur due to many reasons e.g. (i) dehydration
+                                                following severe gastroenteritis especially in small children and the
+                                                elderly. (ii) Blood loss due to injuries or diseases.</li>
+                                            <li>Acute Renal Failure (ARF) may be fully reversible if the primary cause
+                                                resulting in kidney failure has been adequately treated.</li>
+                                            <li>Sometimes Acute renal failure may need support for dialysis. There is a
+                                                major misconception that once acute renal failure has set in then the
+                                                patient will always need dialysis for the rest of his life. This concept
+                                                is very wrong. As I have already mentioned, once the basic cause of
+                                                Acute Renal failure has been adequately treated the renal failure can be
+                                                fully reversed.</li>
+                                            <li>In non-diabetics, if blood urea and serum creatinine are elevated and
+                                                kidney size is normal or near normal then we may plan to do a kidney
+                                                biopsy. Kidney biopsy is a fairly safe procedure done under local
+                                                anesthesia and ultrasound guidance. Once we have the pathology report of
+                                                the kidney biopsy and we have the exact diagnosis of kidney diseases
+                                                then we may be in a position to provide specific treatment to the
+                                                patient and the rising trend of blood urea and serum creatinine may be
+                                                reversed.</li>
+                                        </ul>
+
                                     </div>
                                 </div>
                             </div>
@@ -339,8 +478,60 @@
                                 </h2>
                                 <div id="check" class="accordion-collapse collapse" data-bs-parent="#kdAccordion">
                                     <div class="accordion-body">
-                                        Serum creatinine with eGFR, urine routine and albumin, ultrasound kidneys, blood
-                                        pressure monitoring, and physician examination.
+                                        <strong>Blood and urine tests can tell us how well someone's kidneys are
+                                            working.</strong> <br><br>
+
+                                        Our doctor may decide to do blood and urine tests if you are at risk for kidney
+                                        failure or kidney disease. For people who have started dialysis to replace the
+                                        functions of their kidneys, these tests let their doctors know how well dialysis
+                                        is working. <br><br>
+
+                                        <strong>Urine tests</strong> <br><br>
+
+                                        There are two types of urine tests. One type requires a small amount of urine.
+                                        It tells a doctor if there is blood, infection, protein, or cells in the urine.
+                                        The other type requires collecting all the urine produced for a certain amount
+                                        of time, usually 24 hours. This test will show how much urine your kidneys
+                                        produce in one day. It also measures how much protein is passed from the kidneys
+                                        into the urine in one day. Your doctor will be able to see if your protein
+                                        levels are normal. Your doctor may also measure the amount of waste from muscle
+                                        cells (called creatinine) or from the protein you eat (called urea) in your
+                                        urine to see how well the kidneys are working.
+
+                                        <strong>Blood tests</strong> <br><br>
+
+                                        <strong>Everyone's blood test results are different. They are affected by 3
+                                            things</strong> <br><br>
+
+                                        <ul>
+                                            <li>What the person eats.</li>
+                                            <li>How well the person's kidneys are working.</li>
+                                            <li>How much urine the person passes and how much waste leaves the body
+                                                through the urine.</li>
+                                        </ul>
+
+                                        Your doctor or nurse will give you your latest blood test results. Different
+                                        labs test blood differently, but this section can help explain some of the terms
+                                        you will see on your blood tests. <br><br>
+
+                                        Ask your doctor what he or she would consider to be normal results. <br><br>
+
+                                        Some of the levels described can be affected by diet. Someone on dialysis
+                                        usually has a renal dietitian and/or a nurse to talk to about what to eat.
+                                        <br><br>
+
+                                        Your blood (or the part of your blood called serum) may be tested for several
+                                        things including: <br><br>
+
+                                        <strong>Serum Creatinine</strong> <br><br>
+
+                                        Creatinine is a waste product of muscle activity. The kidneys normally filter
+                                        out this waste. Blood (serum) levels of creatinine are the most common numbers
+                                        used by doctors to determine kidney function. <br><br>
+
+                                        When the kidneys are not working, dialysis helps to remove the extra creatinine.
+                                        Dialysis is usually started when creatinine clearance falls to less than 14
+                                        milliliters per minute (mL/min).
                                     </div>
                                 </div>
                             </div>
@@ -354,9 +545,49 @@
                                 </h2>
                                 <div id="steps" class="accordion-collapse collapse" data-bs-parent="#kdAccordion">
                                     <div class="accordion-body">
-                                        Eat balanced food, keep active, sleep well, avoid unnecessary painkillers,
-                                        manage diabetes/Hypertension, get periodic kidney tests, and consult a
-                                        nephrologist early.
+                                        <strong>For people who still have some kidney function, there are many ways to keep the
+                                        kidneys working longer.</strong> <br><br>
+
+                                        We are lucky to live today at a time when dialysis makes living without kidneys
+                                        possible. But there is no substitute for the real thing. <br><br>
+
+                                        <strong>Where to begin ?</strong> <br><br>
+
+                                        Visit your doctor regularly. If your doctor finds you are at risk for kidney
+                                        disease, or are showing signs of kidney disease, he or she will take several
+                                        steps to improve your health. You will have a common goal: to slow progression
+                                        of the disease, and to delay dialysis. First, your doctor will want to determine
+                                        the cause, and if the cause is reversible. If the cause is an underlying
+                                        condition like diabetes or hypertension, your doctor will help you better
+                                        control this condition. Lifestyle and diet changes may also be initiated -
+                                        dietitians play a significant role in helping patients delay kidney failure.
+                                        This kind of intervention, however, may be effective only if the signs of kidney
+                                        disease are caught early. <br><br>
+
+                                        Take a good look at your personal priorities in life. Personal health should be
+                                        a top priority. Everyday, personal health must come first, whether it is
+                                        deciding what to eat, or how late to work. This is especially true for people
+                                        who have diabetes or hypertension. These are the top 2 conditions that can lead
+                                        to kidney failure. <br><br>
+
+                                        <strong>Other ways to maintain your kidney health include:</strong> <br><br>
+
+                                         <ul>
+                                            <li>Visiting your doctor early, and regularly.</li>
+                                            <li>Following your doctor's advice.</li>
+                                            <li>Maintaining good blood glucose control, if you are diabetic.</li>
+                                            <li>Following your doctor's orders to control your blood pressure, if you have high blood pressure.</li>
+                                            <li>Learning about symptoms of kidney disease.</li>
+                                            <li>Taking prescribed medications.</li>
+                                            <li>Taking dietary supplements or vitamins only with the approval of your doctor.</li>
+                                            <li>Staying positive</li>
+                                        </ul>
+
+                                        For people with early kidney disease, taking these steps may help delay kidney failure. <br><br>
+
+                                        <strong>Remember: managing illness early is much better for your health....</strong> <br><br>
+
+                                        ...and much better for you than waiting until your kidneys have stopped working. When it comes to kidney disease, most patients prefer to have as little change to their lifestyle as possible, and a sense that they have some control over this situation.
                                     </div>
                                 </div>
                             </div>
@@ -385,9 +616,8 @@
         </div>
     </main>
 
-
     <!-- Footer (reused from your index) -->
-   <footer class="pt-5">
+    <footer class="pt-5">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4">
@@ -436,17 +666,20 @@
                         <li>Sat-Sun: Closed</li>
                     </ul>
                     <div class="d-flex gap-2">
-                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="WhatsApp"><i
-                                class="bi bi-whatsapp"></i></a>
-                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="Facebook"><i
-                                class="bi bi-facebook"></i></a>
-                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="twitter"><i
-                                class="bi bi-twitter"></i></a>
-                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="linkedin"><i
+                        <a class="btn btn-sm btn-outline-light" href="https://wa.me/+918178019467"
+                            aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a class="btn btn-sm btn-outline-light"
+                            href="https://www.facebook.com/people/Dr-Jitendra-Kumar/100054350717912/"
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-sm btn-outline-light" href="https://x.com/jitendranephro"
+                            aria-label="twitter"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-sm btn-outline-light"
+                            href="https://www.linkedin.com/in/dr-jitendra-kumar-5a02b3217/" aria-label="linkedin"><i
                                 class="bi bi-linkedin"></i></a>
-                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="Instagram"><i
-                                class="bi bi-instagram"></i></a>
-                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="youtube"><i
+                        <a class="btn btn-sm btn-outline-light" href="https://www.instagram.com/drjitendra_nephro/"
+                            aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a class="btn btn-sm btn-outline-light"
+                            href="https://www.youtube.com/channel/UCXXfmTIOboHqmXR7XWWOUwA" aria-label="youtube"><i
                                 class="bi bi-youtube"></i></a>
                     </div>
                 </div>
@@ -465,7 +698,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-         // Navbar shadow on scroll
+        // Navbar shadow on scroll
         const nav = document.querySelector('.navbar');
         const navShadow = () => nav.classList.toggle('scrolled', window.scrollY > 6);
         navShadow(); window.addEventListener('scroll', navShadow);

@@ -23,24 +23,23 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg py-3 fixed-top bg-light">
+   <nav class="navbar navbar-expand-lg py-3 fixed-top bg-light">
         <div class="container d-flex justify-content-between align-items-center">
 
             <!-- Logo -->
             <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html" aria-label="Kidney Care Home">
-                <img src="images/Logo.png" alt="Dr Jitendra Kumar Logo" class="img-fluid" style="max-height: 60px;">
+                <img src="images/Logo.png" alt="Dr Jitendra Kumar Logo" class="img-fluid" style="max-height: 55px;">
             </a>
 
             <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
-                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <!-- Nav Links -->
-            <div id="nav" class="collapse navbar-collapse justify-content-center">
+            <div id="nav" class="collapse navbar-collapse justify-content-lg-center">
                 <ul class="navbar-nav gap-lg-1 align-items-lg-center">
-
                     <li class="nav-item"><a class="nav-link fw-medium" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link fw-medium" href="about.html">About</a></li>
 
@@ -52,13 +51,15 @@
                         </a>
                         <ul class="dropdown-menu fade-down shadow" aria-labelledby="servicesDropdown">
                             <li><a class="dropdown-item" href="kidneydiseases.html">Kidney Diseases</a></li>
-                            <li><a class="dropdown-item" href="acutekidneyinjury.html">Acute Kidney Injury</a></li>
-                            <li><a class="dropdown-item" href="chronic-kidney-diseases.html">Chronic Kidney Diseases</a></li>
+                            <li><a class="dropdown-item" href="acute_kidney_injury.html">Acute Kidney Injury</a></li>
+                            <li><a class="dropdown-item" href="chronic-kidney-diseases.html">Chronic Kidney Diseases</a>
+                            </li>
                             <li><a class="dropdown-item" href="dialysis.html">Dialysis</a></li>
                             <li><a class="dropdown-item" href="nephritic_syndrome.html">Nephritic Syndrome</a></li>
-                            <li><a class="dropdown-item" href="nephrotic_syndrome.html">Nephritoc Syndrome</a></li>
+                            <li><a class="dropdown-item" href="nephrotic_syndrome.html">Nephrotic Syndrome</a></li>
                             <li><a class="dropdown-item" href="renal_biopsy.html">Renal (Kidney) Biopsy</a></li>
-                            <li><a class="dropdown-item" href="kidney_transplant.html">Renal (Kidney) Transplant</a></li>
+                            <li><a class="dropdown-item" href="kidney_transplant.html">Renal (Kidney) Transplant</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -69,13 +70,13 @@
                             Events
                         </a>
                         <ul class="dropdown-menu fade-down shadow" aria-labelledby="eventsDropdown">
-                            <li><a class="dropdown-item" href="#article">Article</a></li>
-                            <li><a class="dropdown-item" href="#booklaunch">Book Lanuch</a></li>
-                            <li><a class="dropdown-item" href="#cme">CME</a></li>
-                            <li><a class="dropdown-item" href="#eventbyaccord">Event by Accord</a></li>
-                            <li><a class="dropdown-item" href="#isot">ISOT</a></li>
-                            <li><a class="dropdown-item" href="#independence">Independence</a></li>
-                            <li><a class="dropdown-item" href="#homeopathy">Homeopathy</a></li>
+                            <li><a class="dropdown-item" href="article.html">Article</a></li>
+                            <li><a class="dropdown-item" href="book_launch.html">Book Launch</a></li>
+                            <li><a class="dropdown-item" href="cme.html">CME</a></li>
+                            <li><a class="dropdown-item" href="event_by_accord.html">Event by Accord</a></li>
+                            <li><a class="dropdown-item" href="isot.html">ISOT</a></li>
+                            <li><a class="dropdown-item" href="independence.html">Independence</a></li>
+                            <li><a class="dropdown-item" href="homepathy.html">Homeopathy</a></li>
                         </ul>
                     </li>
 
@@ -86,21 +87,26 @@
                             Gallery
                         </a>
                         <ul class="dropdown-menu fade-down shadow" aria-labelledby="galleryDropdown">
-                            <li><a class="dropdown-item" href="#photos">Photo Gallery</a></li>
-                            <li><a class="dropdown-item" href="#videos">Video Gallery</a></li>
+                            <li><a class="dropdown-item" href="photo-gallery.html">Photo Gallery</a></li>
+                            <li><a class="dropdown-item" href="video-gallery.html">Video Gallery</a></li>
                         </ul>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link fw-medium" href="#news">News</a></li>
-                    <li class="nav-item"><a class="nav-link fw-medium" href="#blogs">Blogs</a></li>
-                    <li class="nav-item"><a class="nav-link fw-medium" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="news.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="blogs.html">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="contact.html">Contact</a></li>
 
+                    <!-- CTA Button inside collapse for mobile -->
+                    <li class="nav-item d-lg-none mt-3">
+                        <a class="btn btn-cta w-100 text-white py-2" href="contact.html"><i
+                                class="bi bi-calendar me-2"></i>Book Appointment</a>
+                    </li>
                 </ul>
             </div>
 
-            <!-- Book Appointment Button -->
-            <a class="btn btn-cta text-white px-4 py-2" href="#contact">Book Appointment</a>
-
+            <!-- CTA Button (Desktop only) -->
+            <a class="btn btn-cta text-white px-4 py-2 d-none d-lg-inline-block" href="contact.html"><i
+                    class="bi bi-calendar me-2"></i>Book Appointment</a>
         </div>
     </nav>
 
@@ -169,8 +175,7 @@
                 <section class="col-lg-8 py-0">
 
                     <figure class="k-card p-0 overflow-hidden mb-3">
-                        <img class="w-100" style="object-fit: cover"
-                            src="images/imgi_2_service10.jpg"
+                        <img class="w-100" style="object-fit: cover" src="images/imgi_2_service10.jpg"
                             alt="Medical illustration of kidneys" />
                     </figure>
 
@@ -178,15 +183,32 @@
                     <article id="overview" class="k-card">
                         <h3 class="fw-semibold mb-3">Information</h3>
                         <p class="text-secondary">
-                            Chronic Kidney Disease (CKD) is a condition characterized by persistent evidence of kidney damage or the loss of kidney function lasting for more than three months. This ailment is typically irreversible and gradually progresses toward end-stage renal failure, necessitating treatments such as dialysis or kidney transplantation. CKD is categorized into five stages, each reflecting the degree of renal dysfunction. In normal adult individuals, the Glomerular Filtration Rate (GFR), a measure of kidney filtration capacity, is approximately 100 to 120 cubic centimeters per minute.
+                            Chronic Kidney Disease (CKD) is a condition characterized by persistent evidence of kidney
+                            damage or the loss of kidney function lasting for more than three months. This ailment is
+                            typically irreversible and gradually progresses toward end-stage renal failure,
+                            necessitating treatments such as dialysis or kidney transplantation. CKD is categorized into
+                            five stages, each reflecting the degree of renal dysfunction. In normal adult individuals,
+                            the Glomerular Filtration Rate (GFR), a measure of kidney filtration capacity, is
+                            approximately 100 to 120 cubic centimeters per minute.
                         </p>
-                        <p class="text-secondary">In Stage 5 of CKD, the GFR drops to less than 15 cubic centimeters per minute, indicating end-stage renal failure, which demands renal replacement therapy to sustain life.</p>
+                        <p class="text-secondary">In Stage 5 of CKD, the GFR drops to less than 15 cubic centimeters per
+                            minute, indicating end-stage renal failure, which demands renal replacement therapy to
+                            sustain life.</p>
                         <p class="text-secondary">
-                            Diabetes and hypertension are the most common underlying causes of CKD, accounting for approximately 50% of cases. Early detection can prevent CKD, especially when it stems from diabetes. Competent kidney specialists make it a priority to identify the root causes of kidney diseases, as many of them are entirely treatable. Effective conservative management of CKD can decelerate the disease's progression and enhance the patient's quality of life.
+                            Diabetes and hypertension are the most common underlying causes of CKD, accounting for
+                            approximately 50% of cases. Early detection can prevent CKD, especially when it stems from
+                            diabetes. Competent kidney specialists make it a priority to identify the root causes of
+                            kidney diseases, as many of them are entirely treatable. Effective conservative management
+                            of CKD can decelerate the disease's progression and enhance the patient's quality of life.
                             <br><br>
-                            In some cases, particularly in young patients, high blood pressure may be the sole indication of Chronic Kidney Disease. Surprisingly, roughly 70% of CKD patients remain asymptomatic, often only discovering their condition during routine health checkups.
+                            In some cases, particularly in young patients, high blood pressure may be the sole
+                            indication of Chronic Kidney Disease. Surprisingly, roughly 70% of CKD patients remain
+                            asymptomatic, often only discovering their condition during routine health checkups.
                             <br><br>
-                            If you are seeking Chronic Kidney Disease treatment in Faridabad, you can find dedicated care for this condition in Faridabad. It's crucial to connect with healthcare providers specializing in the management of Chronic Kidney Disease near me to address this condition effectively.
+                            If you are seeking Chronic Kidney Disease treatment in Faridabad, you can find dedicated
+                            care for this condition in Faridabad. It's crucial to connect with healthcare providers
+                            specializing in the management of Chronic Kidney Disease near me to address this condition
+                            effectively.
                         </p>
                         <p class="text-secondary"></p>
                     </article>
@@ -198,19 +220,38 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#causes">
-                                        Who gets acute kidney injury
+                                        DIAGNOSIS :
                                     </button>
                                 </h2>
                                 <div id="causes" class="accordion-collapse collapse" data-bs-parent="#kdAccordion">
                                     <div class="accordion-body">
-                                        People who are in the intensive care unit (ICU) are more likely than people who are in other units of the hospital to have AKI. This is because people who need to be in the ICU are already very sick.
+                                        As a first step toward diagnosis of kidney disease, your doctor discusses your
+                                        personal and family history with you. Among other things, your doctor might ask
+                                        questions about whether you've been diagnosed with high blood pressure, if
+                                        you've taken a medication that might affect kidney function, if you've noticed
+                                        changes in your urinary habits, and whether you have any family members who have
+                                        kidney disease. <br><br>
+
+                                        Next, your doctor performs a physical exam, also checking for signs of problems
+                                        with your heart or blood vessels, and conducts a neurological exam. <br><br>
+
+                                        For kidney disease diagnosis, you may also need certain tests and procedures,
+                                        such as:
                                         <br><br>
                                         <ul>
-                                            <li>Being age 65 or above</li>
-                                            <li>Having a kidney disease or kidney problem</li>
-                                            <li>Having high blood pressure</li>
-                                            <li>Having a chronic disease, such as heart disease, liver disease or diabetes</li>
-                                            <li>Having peripheral artery disease (a condition that makes it hard for your blood to get to your arms and legs)</li>
+                                            <li>Blood tests. Kidney function tests look for the level of waste products,
+                                                such as creatinine and urea, in your blood.</li>
+                                            <li>Urine tests. Analyzing a sample of your urine may reveal abnormalities
+                                                that point to chronic kidney failure and help identify the cause of
+                                                chronic kidney disease.</li>
+                                            <li>Imaging tests. Your doctor may use ultrasound to assess your kidneys'
+                                                structure and size. Other imaging tests may be used in some cases.</li>
+                                            <li>Removing a sample of kidney tissue for testing. Your doctor may
+                                                recommend a kidney biopsy to remove a sample of kidney tissue. Kidney
+                                                biopsy is often done with local anesthesia using a long, thin needle
+                                                that's inserted through your skin and into your kidney. The biopsy
+                                                sample is sent to a lab for testing to help determine what's causing
+                                                your kidney problem.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -220,23 +261,68 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#symptoms">
-                                        What are the symptoms of acute kidney injury?
+                                        TREATMENTS :
                                     </button>
                                 </h2>
                                 <div id="symptoms" class="accordion-collapse collapse" data-bs-parent="#kdAccordion">
                                     <div class="accordion-body">
-                                         Symptoms may include:
+                                        Depending on the underlying cause, some types of kidney disease can be treated.
+                                        Often, though, chronic kidney disease has no cure. <br><br>
+
+                                        Treatment usually consists of measures to help control signs and symptoms,
+                                        reduce complications, and slow progression of the disease. If your kidneys
+                                        become severely damaged, you may need treatment for end-stage kidney disease.
+                                        <br><br>
+
+                                        <strong>Treating the cause</strong> <br><br>
+
+                                        Your doctor will work to slow or control the cause of your kidney disease.
+                                        Treatment options vary, depending on the cause. But kidney damage can continue
+                                        to worsen even when an underlying condition, such as high blood pressure, has
+                                        been controlled. <br><br>
+
+                                        <strong>Treating complications</strong> <br><br>
+
+                                        Kidney disease complications can be controlled to make you more comfortable.
+                                        Treatments may include:
                                         <br><br>
                                         <ul>
-                                            <li>Not enough urine</li>
-                                            <li>Swelling in your legs, ankles or feet</li>
-                                            <li>Feeling tired</li>
-                                            <li>Trouble catching your breath</li>
-                                            <li>Feeling confused</li>
-                                            <li>Nausea</li>
-                                            <li>Pain or pressure in your chest</li>
+                                            <li>High blood pressure medications. People with kidney disease may
+                                                experience worsening high blood pressure. Your doctor may recommend
+                                                medications to lower your blood pressure — commonly
+                                                angiotensin-converting enzyme (ACE) inhibitors or angiotensin II
+                                                receptor blockers — and to preserve kidney function. High blood pressure
+                                                medications can initially decrease kidney function and change
+                                                electrolyte levels, so you may need frequent blood tests to monitor your
+                                                condition. Your doctor will likely also recommend a water pill
+                                                (diuretic) and a low-salt diet.</li>
+                                            <li>Medications to lower cholesterol levels. Your doctor may recommend
+                                                medications called statins to lower your cholesterol. People with
+                                                chronic kidney disease often experience high levels of bad cholesterol,
+                                                which can increase the risk of heart disease.</li>
+                                            <li>Medications to treat anemia. In certain situations, your doctor may
+                                                recommend supplements of the hormone erythropoietin , sometimes with
+                                                added iron. Erythropoietin supplements aid in production of more red
+                                                blood cells, which may relieve fatigue and weakness associated with
+                                                anemia.</li>
+                                            <li>Medications to relieve swelling. People with chronic kidney disease may
+                                                retain fluids. This can lead to swelling in the legs, as well as high
+                                                blood pressure. Medications called diuretics can help maintain the
+                                                balance of fluids in your body.</li>
+                                            <li>Medications to protect your bones. Your doctor may prescribe calcium and
+                                                vitamin D supplements to prevent weak bones and lower your risk of
+                                                fracture. You may also take medication known as a phosphate binder to
+                                                lower the amount of phosphate in your blood, and protect your blood
+                                                vessels from damage by calcium deposits (calcification).</li>
+                                            <li>A lower protein diet to minimize waste products in your blood. As your
+                                                body processes protein from foods, it creates waste products that your
+                                                kidneys must filter from your blood. To reduce the amount of work your
+                                                kidneys must do, your doctor may recommend eating less protein. Your
+                                                doctor may also ask you to meet with a dietitian who can suggest ways to
+                                                lower your protein intake while still eating a healthy diet.</li>
                                         </ul>
-                                        If you have very severe AKI, you may have seizures or fall into a coma.
+                                        Your doctor may recommend follow-up testing at regular intervals to see whether
+                                        your kidney disease remains stable or progresses.
                                     </div>
                                 </div>
                             </div>
@@ -245,13 +331,34 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#prevention">
-                                        PREVENTION OF KIDNEY DISEASE
+                                        Treatment for end-stage kidney disease
                                     </button>
                                 </h2>
                                 <div id="prevention" class="accordion-collapse collapse" data-bs-parent="#kdAccordion">
                                     <div class="accordion-body">
-                                        Control sugar and BP, maintain healthy weight, avoid smoking, exercise daily,
-                                        limit salt, stay hydrated, and follow medical advice regularly.
+                                        If your kidneys can't keep up with waste and fluid clearance on their own and
+                                        you develop complete or near-complete kidney failure, you have end-stage kidney
+                                        disease. At that point, you need dialysis or a kidney transplant. <br><br>
+
+                                        <ul>
+                                            <li>Dialysis. Dialysis artificially removes waste products and extra fluid
+                                                from your blood when your kidneys can no longer do this. In
+                                                hemodialysis, a machine filters waste and excess fluids from your blood.
+                                                In peritoneal dialysis, a thin tube (catheter) inserted into your
+                                                abdomen fills your abdominal cavity with a dialysis solution that
+                                                absorbs waste and excess fluids. After a period of time, the dialysis
+                                                solution drains from your body, carrying the waste with it.</li>
+                                            <li>Kidney transplant. A kidney transplant involves surgically placing a
+                                                healthy kidney from a donor into your body. Transplanted kidneys can
+                                                come from deceased or living donors. You'll need to take medications for
+                                                the rest of your life to keep your body from rejecting the new organ.
+                                                You don't need to be on dialysis to have a kidney transplant.</li>
+                                        </ul>
+
+                                        For some who choose not to have dialysis or a kidney transplant, a third option
+                                        is to treat kidney failure with conservative measures. However, once you have
+                                        complete kidney failure, your life expectancy generally would be only a few
+                                        months.
                                     </div>
                                 </div>
                             </div>
@@ -260,13 +367,27 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#check">
-                                        WAYS TO CHECK KIDNEY HEALTH
+                                        Potential Future Treatments
                                     </button>
                                 </h2>
                                 <div id="check" class="accordion-collapse collapse" data-bs-parent="#kdAccordion">
                                     <div class="accordion-body">
-                                        Serum creatinine with eGFR, urine routine and albumin, ultrasound kidneys, blood
-                                        pressure monitoring, and physician examination.
+                                        Regenerative medicine holds the potential to fully heal damaged tissues and
+                                        organs, offering solutions and hope for people who have conditions that today
+                                        are beyond repair. <br><br>
+
+                                        Regenerative medicine approaches include: <br><br>
+
+                                        <ul>
+                                            <li>Boosting the body's natural ability to heal itself.</li>
+                                            <li>Using healthy cells, tissues or organs from a living or deceased donor
+                                                to replace damaged ones.</li>
+                                            <li>Delivering specific types of cells or cell products to diseased tissues
+                                                or organs to restore tissue and organ function.</li>
+                                        </ul>
+
+                                        For people with chronic kidney disease, regenerative medicine approaches may be
+                                        developed in the future to help slow progression of the disease.
                                     </div>
                                 </div>
                             </div>
@@ -275,14 +396,24 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#steps">
-                                        Steps to be taken to keep your Kidney Healthy
+                                        Lifestyle and home remedies
                                     </button>
                                 </h2>
                                 <div id="steps" class="accordion-collapse collapse" data-bs-parent="#kdAccordion">
                                     <div class="accordion-body">
-                                        Eat balanced food, keep active, sleep well, avoid unnecessary painkillers,
-                                        manage diabetes/Hypertension, get periodic kidney tests, and consult a
-                                        nephrologist early.
+                                        As part of your treatment for chronic kidney disease, your doctor may recommend
+                                        a special diet to help support your kidneys and limit the work they must do. Ask
+                                        your doctor for a referral to a dietitian who can analyze your current diet and
+                                        suggest ways to make your diet easier on your kidneys. <br><br>
+
+                                        Depending on your situation, kidney function and overall health, your dietitian
+                                        may recommend that you: <br><br>
+
+                                        <ul>
+                                            <li>Avoid products with added salt. Lower the amount of sodium you eat each day by avoiding products with added salt, including many convenience foods, such as frozen dinners, canned soups and fast foods. Other foods with added salt include salty snack foods, canned vegetables, and processed meats and cheeses.</li>
+                                            <li>Choose lower potassium foods. Your dietitian may recommend that you choose lower potassium foods at each meal. High-potassium foods include bananas, oranges, potatoes, spinach and tomatoes. Examples of low-potassium foods include apples, cabbage, carrots, green beans, grapes and strawberries. Be aware that many salt substitutes contain potassium, so you generally should avoid them if you have kidney failure.</li>
+                                            <li>Limit the amount of protein you eat. Your dietitian will estimate the appropriate number of grams of protein you need each day and make recommendations based on that amount. High-protein foods include lean meats, eggs, milk, cheese and beans. Low-protein foods include vegetables, fruits, breads and cereals.</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -310,7 +441,6 @@
             </div>
         </div>
     </main>
-
 
     <!-- Footer (reused from your index) -->
     <footer class="pt-5">
@@ -362,17 +492,20 @@
                         <li>Sat-Sun: Closed</li>
                     </ul>
                     <div class="d-flex gap-2">
-                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="WhatsApp"><i
-                                class="bi bi-whatsapp"></i></a>
-                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="Facebook"><i
-                                class="bi bi-facebook"></i></a>
-                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="twitter"><i
-                                class="bi bi-twitter"></i></a>
-                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="linkedin"><i
+                        <a class="btn btn-sm btn-outline-light" href="https://wa.me/+918178019467"
+                            aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a class="btn btn-sm btn-outline-light"
+                            href="https://www.facebook.com/people/Dr-Jitendra-Kumar/100054350717912/"
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-sm btn-outline-light" href="https://x.com/jitendranephro"
+                            aria-label="twitter"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-sm btn-outline-light"
+                            href="https://www.linkedin.com/in/dr-jitendra-kumar-5a02b3217/" aria-label="linkedin"><i
                                 class="bi bi-linkedin"></i></a>
-                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="Instagram"><i
-                                class="bi bi-instagram"></i></a>
-                        <a class="btn btn-sm btn-outline-light" href="#" aria-label="youtube"><i
+                        <a class="btn btn-sm btn-outline-light" href="https://www.instagram.com/drjitendra_nephro/"
+                            aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a class="btn btn-sm btn-outline-light"
+                            href="https://www.youtube.com/channel/UCXXfmTIOboHqmXR7XWWOUwA" aria-label="youtube"><i
                                 class="bi bi-youtube"></i></a>
                     </div>
                 </div>
@@ -392,7 +525,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-         // Navbar shadow on scroll
+        // Navbar shadow on scroll
         const nav = document.querySelector('.navbar');
         const navShadow = () => nav.classList.toggle('scrolled', window.scrollY > 6);
         navShadow(); window.addEventListener('scroll', navShadow);
