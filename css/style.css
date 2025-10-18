@@ -26,9 +26,6 @@ body {
 }
 
 /* Global spacing + section titles */
-/* .section {
-  padding: 60px 0;
-} */
 
 .section-title {
   font-family: Poppins, Inter, sans-serif;
@@ -149,17 +146,7 @@ body {
   border-left: 3px solid #6f42c1;
 }
 
-.btn-cta {
-  background: linear-gradient(90deg, #6f42c1, #8b5cf6);
-  border-radius: 100px;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
 
-.btn-cta:hover {
-  background: linear-gradient(90deg, #8b5cf6, #6f42c1);
-  color: #fff;
-}
 
 @media (max-width: 991px) {
   .navbar-collapse {
@@ -178,7 +165,17 @@ body {
   }
 } */
 
+.btn-cta {
+  background: linear-gradient(90deg, #6f42c1, #8b5cf6);
+  border-radius: 100px;
+  font-weight: 500;
+  transition: 0.3s ease;
+  color: var(--muted);
+}
 
+.btn-cta:hover {
+  background: linear-gradient(90deg, #8b5cf6, #6f42c1);
+}
 
 
 /* Navbar */
@@ -956,7 +953,7 @@ section {
 } */
 
 section {
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 /* Reveal animation */
