@@ -18,101 +18,219 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Your theme (imported)  -->
     <link rel="stylesheet" href="css/style.css" />
 
     <style>
-        /* Masonry Gallery */
-        .gallery {
-            column-gap: 1rem;
+        :root {
+            --primary: #6f2dbd;
+            /* brand purple */
+            --accent: #20b45b;
+            /* brand green */
+            --bg-dark: #0d1321;
+            /* deep navy for dark bands */
+            --surface: #ffffff;
+            /* white */
+            --muted: #f3f5f8;
+            /* light gray surface */
         }
 
-        @media (min-width: 576px) {
-            .gallery {
-                column-count: 2;
-            }
-        }
-
-        @media (min-width: 992px) {
-            .gallery {
-                column-count: 3;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .gallery {
-                column-count: 4;
-            }
-        }
-
-        .gallery-item {
-            break-inside: avoid;
-            margin: 0 0 1rem;
+        .section-title {
+            text-align: center;
+            /* margin: 4rem 0 3rem; */
             position: relative;
-            transition: transform .2s ease, box-shadow .2s ease;
-            border-radius: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--bg-dark);
+        }
+
+        .section-title .highlight {
+            color: var(--secondary);
+        }
+
+        .title-underline {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--bg-dark) 100%);
+            margin: auto;
+            border-radius: 2px;
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .video-card {
+            background: var(--muted);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             overflow: hidden;
-            background: var(--surface);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 28px rgba(2, 6, 23, .15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
+            box-shadow: 0 10px 25px rgba(75, 75, 75, 0.2);
+            position: relative;
+            group: video-card;
         }
 
-        /* Hover overlay */
-        .gallery-item .overlay {
+        .video-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            /* box-shadow: 0 20px 40px rgba(0, 212, 170, 0.2); */
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
             position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(15, 23, 42, .55), transparent 60%);
-            opacity: 0;
-            transition: opacity .2s ease;
-            display: flex;
-            align-items: end;
-            padding: .75rem;
-            color: #fff;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+            background-color: var(--muted);
+        }
+
+        .video-title {
+            font-size: 1.1rem;
             font-weight: 600;
-            letter-spacing: .2px;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            transition: color 0.3s ease;
         }
 
-        .gallery-item:hover .overlay {
-            opacity: 1;
+        /* .video-card:hover .video-title {
+            color: var(--primary);
+        } */
+
+        .video-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
         }
 
-        /* Subtle appear animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(10px);
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
         }
 
-        .fade-in.is-visible {
-            opacity: 1;
-            transform: none;
-            transition: opacity .5s ease, transform .5s ease;
+        .video-duration {
+            background: rgba(0, 212, 170, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            color: var(--accent);
         }
 
-        /* Modal tweaks */
-        .modal-dark .modal-content {
-            background: #0b1023;
-            color: #fff;
-            border: 0;
-            border-radius: 24px;
+        /* View All Button */
+        .view-all-container {
+            text-align: center;
+            /* margin: 3rem 0; */
         }
 
-        .modal-dark .btn-close {
-            filter: invert(1);
+        .btn-view-all {
+            background: linear-gradient(90deg, #6f42c1, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            /* box-shadow: 0 10px 25px rgba(80, 142, 208, 0.3); */
         }
 
-        .modal-caption {
-            color: #94a3b8;
+        .btn-view-all:hover {
+            transform: translateY(-3px);
+            /* box-shadow: 0 15px 35px rgba(0, 212, 170, 0.4); */
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .navbar-collapse {
+                background: rgba(26, 31, 58, 0.98);
+                padding: 1rem;
+                border-radius: 8px;
+                margin-top: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .video-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .video-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .video-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .video-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .video-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .video-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .video-card:nth-child(6) {
+            animation-delay: 0.6s;
         }
     </style>
 
@@ -205,7 +323,7 @@
                     class="bi bi-calendar me-2"></i>Book Appointment</a>
         </div>
     </nav>
-    
+
     <header class="about-hero pb-5" style="padding-top: 150px;">
         <div class="container">
             <div class="row justify-content-center align-items-center g-4">
@@ -225,231 +343,119 @@
     </header>
 
     <section>
-        <div class="container">
-            <!-- <div class="gallery" id="gallery">
-                <figure class="gallery-item fade-in" data-category="event" data-caption="">
-                    <img src="images/imgi_38_dr.jitendra-gallery7.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
+        <main class="container-lg">
+            <!-- Section Title -->
+            <div class="section-title">
+                <h2>Latest <span class="highlight">Medical Videos</span></h2>
+                <div class="title-underline mb-5"></div>
+            </div>
 
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_10_news-3.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
+            <!-- Video Grid -->
+            <div class="video-grid" id="videoGrid">
+                <!-- Video 1 -->
+                <div class="video-card" data-category="kidney">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/RQtg-Xg_788?si=XH9oBxZji6A4bBa4" allowfullscreen=""
+                            loading="lazy"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Why Do Bubbles Form in Urine ?</h3>
+                        <p class="video-description">Foamy Urine Explained by Best Nephrologist in Faridabad.</p>
+                        <div class="video-meta">
+                            <span>Dr. Jitendra Kumar</span>
+                            <!-- <span class="video-duration">12:45</span> -->
+                        </div>
+                    </div>
+                </div>
 
-                <figure class="gallery-item fade-in" data-category="speaker" data-caption="">
-                    <img src="images/imgi_39_dr.jitendra-gallery8.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
+                <!-- Video 2 -->
+                <div class="video-card" data-category="dialysis">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/ysYGLAX117c?si=uJJ8f4ACGgY9OQvF" allowfullscreen=""
+                            loading="lazy"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">How is Life After Kidney Transplant ?</h3>
+                        <p class="video-description">Care, Diet & Precautions To Be Taken After Kidney Transplant.</p>
+                        <div class="video-meta">
+                            <span>Dr. Jitendra Kumar</span>
+                            <!-- <span class="video-duration">15:30</span> -->
+                        </div>
+                    </div>
+                </div>
 
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_11_news-4.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
+                <!-- Video 3 -->
+                <div class="video-card" data-category="hypertension">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/y_hqbJMNPFc?si=JUuyyneKKO0ReX4D" allowfullscreen=""
+                            loading="lazy"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Can Chronic Kidney Diseases Stay Stable For Years ?</h3>
+                        <p class="video-description">High TSH, Stage 2-3 Chronic Kidney Diseases explained</p>
+                        <div class="video-meta">
+                            <span>Dr. Jitendra Kumar</span>
+                            <!-- <span class="video-duration">10:20</span> -->
+                        </div>
+                    </div>
+                </div>
 
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_12_news-5.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
+                <!-- Video 4 -->
+                <div class="video-card" data-category="kidney">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/Uih1mskH2FU?si=BvvyyZM94HHFyazx" allowfullscreen=""
+                            loading="lazy"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Energy Drinks Side Effects On Kidneys</h3>
+                        <p class="video-description">Nephrologist Explains Hidden Dangers.</p>
+                        <div class="video-meta">
+                            <span>Dr. Jitendra Kumar</span>
+                            <!-- <span class="video-duration">14:15</span> -->
+                        </div>
+                    </div>
+                </div>
 
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_13_news-6.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
+                <!-- Video 5 -->
+                <div class="video-card" data-category="dialysis">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/MIqeVgZ3rG8?si=ysTdRik1u-jq7zJU" allowfullscreen=""
+                            loading="lazy"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Why Kidney Patients Getting Betrayed ?</h3>
+                        <p class="video-description">Common Signs That People Ignore.</p>
+                        <div class="video-meta">
+                            <span>Dr. Jitendra Kumar</span>
+                            <!-- <span class="video-duration">11:50</span> -->
+                        </div>
+                    </div>
+                </div>
 
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_14_dr.jitendra-dainik-jagran.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
+                <!-- Video 6 -->
+                <div class="video-card" data-category="hypertension">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/tDyv5jcXV-M?si=kLt8pDdvz46yF-iw" allowfullscreen=""
+                            loading="lazy"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Dialysis and The Fear Of Death</h3>
+                        <p class="video-description">Everything You Need To Know About Dialysis</p>
+                        <div class="video-meta">
+                            <span>Dr. Jitendra Kumar</span>
+                            <!-- <span class="video-duration">13:40</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_15_dr.jitendra-jagran.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/imgi_48_dr.jitendra-gallery5.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_16_dr.jitendra-jagran2.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_17_dr.jitendra-newspaper-article.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_18_dr.jitendra-newspaper-article2.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_19_dr.jitendra-newspaper-article3.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                 <figure class="gallery-item fade-in" data-category="group" data-caption="">
-                    <img src="images/imgi_46_dr.jitendra-gallery3.webp" alt=""
-                        loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_20_dr.jitendra-newspaper-article4.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-                
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_21_dr.jitendra-newspaper-article5.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_22_dr.jitendra-newspaper-article6.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_23_dr.jitendra-newspaper-article7.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/imgi_42_dr.jitendra-gallery11.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_24_dr.jitendra-newspaper-article8.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_25_dr.jitendra-newspaper-article9.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="event" data-caption="">
-                    <img src="images/imgi_44_dr.jitendra-gallery1.webp" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_26_dr.jitendra-newspaper-article10.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/imgi_47_dr.jitendra-gallery4.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_27_dr.jitendra-newspaper-article11.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_28_dr.jitendra-newspaper-article12.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_29_dr.jitendra-newspaper-article13.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_30_dr.jitendra-newspaper-article14.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_31_dr.jitendra-newspaper-article15.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_32_dr.jitendra-newspaper-article16.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                 <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/imgi_49_dr.jitendra-gallery6.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_33_dr.jitendra-newspaper-article17.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_34_dr.jitendra-newspaper-article18.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_35_dr.jitendra-newspaper-article19.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_36_dr.jitendra-newspaper-article21.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_37_dr.jitendra-punjab-kesari.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_5_shivir.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                 <figure class="gallery-item fade-in" data-category="moment" data-caption="Signing copies">
-                    <img src="images/imgi_40_dr.jitendra-gallery9.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_6_shivir1.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_7_dr.jitendra-newspaper-article22.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_8_news-1.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="group" data-caption="">
-                    <img src="images/imgi_41_dr.jitendra-gallery10.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="moment" data-caption="">
-                    <img src="images/gallery/imgi_9_news-2.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-
-                <figure class="gallery-item fade-in" data-category="speaker" data-caption="">
-                    <img src="images/imgi_45_dr.jitendra-gallery2.webp" alt="" loading="lazy" />
-                    <figcaption class="overlay"></figcaption>
-                </figure>
-            </div> -->
-
-        </div>
+            <!-- View All Button -->
+            <div class="view-all-container">
+                <a href="https://www.youtube.com/@drjitendrakumar2877">
+                    <button class="btn btn-view-all">View All Videos</button>
+                </a>
+            </div>
+        </main>
     </section>
 
     <div class="modal fade modal-dark" id="lightboxModal" tabindex="-1" aria-hidden="true">
@@ -586,73 +592,22 @@
     </script>
 
     <script>
-        // Filter logic
-        const filterButtons = document.querySelectorAll('.filter-bar .btn');
-        const items = document.querySelectorAll('.gallery-item');
-
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const f = btn.dataset.filter;
-                items.forEach(el => {
-                    const keep = f === 'all' || el.dataset.category === f;
-                    el.style.display = keep ? '' : 'none';
-                });
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
 
-        // Appear on scroll
-        const fadeInObserver = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) e.target.classList.add('is-visible');
-            });
-        }, { threshold: .15 });
-        document.querySelectorAll('.fade-in').forEach(el => fadeInObserver.observe(el));
-
-        // Lightbox: build carousel slides dynamically from gallery
-        const modalEl = document.getElementById('lightboxModal');
-        const carouselEl = document.getElementById('lightboxCarousel');
-        const slidesRoot = carouselEl.querySelector('.carousel-inner');
-        const captionEl = document.getElementById('lightboxCaption');
-        const modal = new bootstrap.Modal(modalEl);
-        const carousel = new bootstrap.Carousel(carouselEl, { interval: false });
-
-        // Collect sources
-        const sources = [...items].map((el) => ({
-            src: el.querySelector('img').src,
-            alt: el.querySelector('img').alt,
-            caption: el.dataset.caption || ''
-        }));
-
-        // Build slides once
-        function buildSlides() {
-            slidesRoot.innerHTML = sources.map((s, idx) => `
-          <div class="carousel-item ${idx === 0 ? 'active' : ''}">
-            <img src="${s.src}" class="d-block w-100 rounded-4" alt="${s.alt}" />
-          </div>
-        `).join('');
-            captionEl.textContent = sources[0].caption || sources[0].alt || '';
-        }
-        buildSlides();
-
-        // Click handlers to open at correct index
-        items.forEach((el, idx) => {
-            el.addEventListener('click', () => {
-                carousel.to(idx);
-                captionEl.textContent = sources[idx].caption || sources[idx].alt || '';
-                modal.show();
-            });
+        // Add transition to video cards
+        videoCards.forEach(card => {
+            card.style.transition = 'opacity 0.3s ease';
+            card.style.opacity = '1';
         });
-
-        // Update caption on slide
-        carouselEl.addEventListener('slid.bs.carousel', (e) => {
-            const i = e.to;
-            captionEl.textContent = sources[i].caption || sources[i].alt || '';
-        });
-
-        // Keyboard navigation hint (Bootstrap already handles arrows when focused)
-        modalEl.addEventListener('shown.bs.modal', () => carouselEl.focus());
     </script>
 
 </body>
